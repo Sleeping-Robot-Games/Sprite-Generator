@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/PlayerSprites.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/SpriteListItem.gd" type="Script" id=2]
+
+[node name="SpriteListItem" type="HBoxContainer"]
+anchor_top = 0.004
+anchor_bottom = 0.004
+margin_left = 110.0
+margin_top = 0.0799999
+margin_right = 526.0
+margin_bottom = 131.08
+custom_constants/separation = 90
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpriteName" type="Label" parent="."]
+margin_top = 58.0
+margin_right = 120.0
+margin_bottom = 72.0
+text = "Name of the Sprite"
+align = 1
+valign = 1
+
+[node name="SpriteContainer" type="Control" parent="."]
+margin_left = 210.0
+margin_right = 210.0
+margin_bottom = 131.0
+
+[node name="PlayerSprites" parent="SpriteContainer" instance=ExtResource( 1 )]
+position = Vector2( -8, 70 )
+scale = Vector2( 2, 2 )
+
+[node name="ButtonContainer" type="Control" parent="."]
+margin_left = 300.0
+margin_right = 300.0
+margin_bottom = 131.0
+
+[node name="Edit" type="Button" parent="ButtonContainer"]
+margin_left = -5.0
+margin_top = 46.0
+margin_right = 35.0
+margin_bottom = 87.0
+text = "Edit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Delete" type="Button" parent="ButtonContainer"]
+margin_left = 47.0
+margin_top = 46.0
+margin_right = 103.0
+margin_bottom = 87.0
+text = "Delete"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="ButtonContainer/Edit" to="." method="_on_Edit_button_up"]
+[connection signal="button_up" from="ButtonContainer/Delete" to="." method="_on_Delete_button_up"]

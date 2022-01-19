@@ -210,11 +210,11 @@ func _on_Save_button_up():
 		# TODO: if this is true move to character tab and show error
 		$NameLabel/Error.text = "Name is Required"
 		$NameLabel/Error.show()
-	elif g.character_name_exists(player_name):
+	elif g.sprite_name_exists(player_name):
 		$NameLabel/Error.text = "Name is Taken"
 		$NameLabel/Error.show()
 	else:
-		g.save_dress_up_character(sprite_state, pallete_sprite_state, player_name)
+		g.save_sprite(sprite_state, pallete_sprite_state, player_name)
 		hide()
 		get_node('../Main').show()
 

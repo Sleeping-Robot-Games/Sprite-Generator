@@ -46,7 +46,7 @@ func _ready():
 func export_spritesheet(state):
 	for player_sprites in $ViewportContainer/Viewport.get_children():
 		var sprite_holder = player_sprites.get_node('SpriteHolder')
-		g.load_sprites(sprite_holder, state)
+		g.load_sprite(sprite_holder, state)
 	$Timer.start()
 
 	
