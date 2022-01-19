@@ -845,6 +845,9 @@ margin_top = 376.762
 margin_right = 227.539
 margin_bottom = 396.762
 text = "Turn Right"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Save" type="Button" parent="."]
 margin_left = 469.0

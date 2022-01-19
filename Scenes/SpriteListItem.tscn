@@ -4,39 +4,57 @@
 [ext_resource path="res://Scripts/SpriteListItem.gd" type="Script" id=2]
 
 [node name="SpriteListItem" type="HBoxContainer"]
-anchor_top = 0.004
-anchor_bottom = 0.004
-margin_left = 110.0
-margin_top = 0.0799999
-margin_right = 526.0
-margin_bottom = 131.08
-custom_constants/separation = 90
+margin_right = 500.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 500, 140 )
+custom_constants/separation = 150
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SpriteName" type="Label" parent="."]
-margin_top = 58.0
-margin_right = 120.0
-margin_bottom = 72.0
-text = "Name of the Sprite"
+margin_top = 63.0
+margin_right = 70.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 70, 0 )
+text = "test"
 align = 1
 valign = 1
 
 [node name="SpriteContainer" type="Control" parent="."]
-margin_left = 210.0
-margin_right = 210.0
-margin_bottom = 131.0
+margin_left = 220.0
+margin_right = 220.0
+margin_bottom = 140.0
 
 [node name="PlayerSprites" parent="SpriteContainer" instance=ExtResource( 1 )]
-position = Vector2( -8, 70 )
+position = Vector2( 10, 71 )
 scale = Vector2( 2, 2 )
 
+[node name="Left" type="Button" parent="SpriteContainer"]
+margin_left = -58.0
+margin_top = 112.0
+margin_right = -22.0
+margin_bottom = 132.0
+text = "Left"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Right" type="Button" parent="SpriteContainer"]
+margin_left = 38.0
+margin_top = 112.0
+margin_right = 82.0
+margin_bottom = 132.0
+text = "Right"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ButtonContainer" type="Control" parent="."]
-margin_left = 300.0
-margin_right = 300.0
-margin_bottom = 131.0
+margin_left = 370.0
+margin_right = 370.0
+margin_bottom = 140.0
 
 [node name="Edit" type="Button" parent="ButtonContainer"]
 margin_left = -5.0
@@ -58,5 +76,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[connection signal="button_up" from="SpriteContainer/Left" to="." method="_on_Turn_button_up" binds= [ -1 ]]
+[connection signal="button_up" from="SpriteContainer/Right" to="." method="_on_Turn_button_up" binds= [ 1 ]]
 [connection signal="button_up" from="ButtonContainer/Edit" to="." method="_on_Edit_button_up"]
 [connection signal="button_up" from="ButtonContainer/Delete" to="." method="_on_Delete_button_up"]
