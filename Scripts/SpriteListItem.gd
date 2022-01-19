@@ -10,11 +10,9 @@ func init(_sprite_data):
 	sprite_data = _sprite_data
 	$SpriteName.text = sprite_data.name
 	g.load_sprite($SpriteContainer/PlayerSprites/SpriteHolder, sprite_data)
-	
 
 func _ready():
 	$SpriteContainer/PlayerSprites/AnimationPlayer.play(animations[current_animation])
-
 
 func _on_Edit_button_up():
 	pass

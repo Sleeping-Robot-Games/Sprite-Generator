@@ -5,7 +5,6 @@ var sprite_list_item = preload("res://Scenes/SpriteListItem.tscn")
 func _ready():
 	pass
 
-
 func _on_SpriteList_visibility_changed():
 	if visible: 
 		var sprite_list = g.load_all_sprites()
