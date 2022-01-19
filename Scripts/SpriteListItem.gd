@@ -4,6 +4,7 @@ var sprite_data
 var current_animation = 0
 var animations = ['idle_front', 'idle_right', 'idle_back', 'idle_left']
 
+signal signal_test(name)
 
 func init(_sprite_data):
 	sprite_data = _sprite_data
@@ -19,7 +20,7 @@ func _on_Edit_button_up():
 	pass
 
 func _on_Delete_button_up():
-	g.remove_sprite_by_name(sprite_data.name)
+	emit_signal("signal_test", sprite_data.name)
 
 func _on_Turn_button_up(direction):
 	current_animation += direction
