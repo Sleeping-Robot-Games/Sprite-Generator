@@ -44,6 +44,7 @@ func _ready():
 		$ViewportContainer/Viewport.add_child(frame_instance)
 		
 func export_spritesheet(state):
+	show()
 	for player_sprites in $ViewportContainer/Viewport.get_children():
 		var sprite_holder = player_sprites.get_node('SpriteHolder')
 		g.load_sprite(sprite_holder, state)
@@ -55,7 +56,7 @@ func save_img():
 	var image = $ViewportContainer/Viewport.get_texture().get_data()
 	image.convert(Image.FORMAT_RGBA8)
 	image.flip_y()
-	image.save_png("C:/Users/bryan/Desktop/test_screenshot.png")
+	image.save_png("user://"+str(OS.get_ticks_msec())+'.png')
 
 
 func _on_Timer_timeout():

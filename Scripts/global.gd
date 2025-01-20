@@ -79,7 +79,10 @@ func load_sprite(sprite_holder: Node2D, state: Dictionary):
 			continue
 		if part.name in state.sprite_state.keys():
 			#if not part.name in state.sprite_state.keys():
-			part.texture = load(state.sprite_state[part.name])
+			var test = state.sprite_state[part.name]
+
+			if test:
+				part.texture = load(test)
 		else:
 			continue
 		var folder = get_palette_folder_name_from_sprite(part)

@@ -15,9 +15,6 @@ margin_top = -640.0
 margin_right = 512.0
 margin_bottom = 640.0
 stretch = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Viewport" type="Viewport" parent="ViewportContainer"]
 size = Vector2( 1024, 1280 )
@@ -26,5 +23,7 @@ handle_input_locally = false
 render_target_update_mode = 3
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
