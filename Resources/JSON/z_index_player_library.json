@@ -1,111 +1,110 @@
 {
-	"Accessory1": {
-		"front": 15,
-		"right": 17,
-		"back": 15,
-		"left": 17
-	},
-	"Accessory2": {
-		"front": 13,
-		"right": 3,
-		"back": 2,
-		"left": 3
-    },
-    "Accessory3": {
-        "front": 18,
-		"right": 8,
-		"back": 18,
-		"left": 8
-    },
-    "Arms": {
-        "front": 7,
-		"right": 14,
-		"back": 3,
-		"left": 14
-    },
-    "Body": {
-        "front": 2,
-		"right": 6,
-		"back": 7,
-		"left": 6
-    },
-    "BottomA": {
-        "front": 3,
-		"right": 9,
-		"back": 8,
-		"left": 9
-    },
-    "BottomB": {
-        "front": 6,
-		"right": 12,
-		"back": 11,
-		"left": 12
-    },
-    "Eyes": {
-        "front": 12,
-		"right": 2,
-		"back": 1,
-		"left": 2
-    },
-    "HairA": {
-        "front": 14,
-		"right": 4,
-		"back": 5,
-		"left": 4
-    },
-    "HairB": {
-        "front": 1,
-		"right": 5,
-		"back": 16,
-		"left": 5
-    },
-    "HairC": {
-        "front": 16,
-		"right": 18,
-		"back": 6,
-		"left": 18
-    },
-    "HairD": {
-        "front": 17,
-		"right": 19,
-		"back": 17,
-		"left": 19
-    },
-    "Head": {
-        "front": 11,
-		"right": 1,
-		"back": 4,
-		"left": 1
-    },
-    "JacketA": {
-        "front": 8,
-		"right": 13,
-		"back": 12,
-		"left": 13
-    },
-    "JacketB": {
-        "front": 10,
-		"right": 16,
-		"back": 14,
-		"left": 16
-    }, 
-    "Shoes": {
-        "front": 4,
-		"right": 10,
-		"back": 9,
-		"left": 10
-    },
-    "TopA": {
-        "front": 5,
-		"right": 11,
-		"back": 10,
-		"left": 11
-    },
-    "TopB": {
-        "front": 9,
-		"right": 15,
-		"back": 13,
-		"left": 15
-    }
-
+  "AccessoryA": {
+    "front": 15,
+    "right": 17,
+    "back": 15,
+    "left": 17
+  },
+  "AccessoryB": {
+    "front": 13,
+    "right": 3,
+    "back": 2,
+    "left": 3
+  },
+  "AccessoryC": {
+    "front": 18,
+    "right": 8,
+    "back": 18,
+    "left": 8
+  },
+  "Arms": {
+    "front": 7,
+    "right": 14,
+    "back": 3,
+    "left": 14
+  },
+  "Body": {
+    "front": 2,
+    "right": 6,
+    "back": 7,
+    "left": 6
+  },
+  "BottomA": {
+    "front": 3,
+    "right": 9,
+    "back": 8,
+    "left": 9
+  },
+  "BottomB": {
+    "front": 6,
+    "right": 12,
+    "back": 11,
+    "left": 12
+  },
+  "Eyes": {
+    "front": 12,
+    "right": 2,
+    "back": 1,
+    "left": 2
+  },
+  "HairA": {
+    "front": 14,
+    "right": 4,
+    "back": 5,
+    "left": 4
+  },
+  "HairB": {
+    "front": 1,
+    "right": 5,
+    "back": 16,
+    "left": 5
+  },
+  "HairC": {
+    "front": 16,
+    "right": 18,
+    "back": 6,
+    "left": 18
+  },
+  "HairD": {
+    "front": 17,
+    "right": 19,
+    "back": 17,
+    "left": 19
+  },
+  "Head": {
+    "front": 11,
+    "right": 1,
+    "back": 4,
+    "left": 1
+  },
+  "JacketA": {
+    "front": 8,
+    "right": 13,
+    "back": 12,
+    "left": 13
+  },
+  "JacketB": {
+    "front": 10,
+    "right": 16,
+    "back": 14,
+    "left": 16
+  },
+  "Shoes": {
+    "front": 4,
+    "right": 10,
+    "back": 9,
+    "left": 10
+  },
+  "TopA": {
+    "front": 5,
+    "right": 11,
+    "back": 10,
+    "left": 11
+  },
+  "TopB": {
+    "front": 9,
+    "right": 15,
+    "back": 13,
+    "left": 15
+  }
 }

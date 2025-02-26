@@ -115,6 +115,7 @@ __meta__ = {
 }
 
 [node name="FemaleButton" type="Button" parent="TabContainer/Character"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 264.0
@@ -123,11 +124,9 @@ margin_right = -65.0
 margin_bottom = -226.335
 group = ExtResource( 2 )
 icon = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="MaleButton" type="Button" parent="TabContainer/Character"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 299.0
@@ -140,32 +139,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FarmNameLabel" type="Label" parent="TabContainer/Character"]
-visible = false
-margin_left = 28.3566
-margin_top = 52.8882
-margin_right = 106.357
-margin_bottom = 66.8882
-text = "Farm Name:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="FarmName" type="LineEdit" parent="TabContainer/Character/FarmNameLabel"]
-margin_left = 90.6508
-margin_top = -5.0
-margin_right = 212.651
-margin_bottom = 19.0
-
 [node name="CharacterTabRandom" type="Button" parent="TabContainer/Character"]
 margin_left = 270.464
 margin_top = 231.826
 margin_right = 334.464
 margin_bottom = 251.826
 text = "Random"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Head" type="Tabs" parent="TabContainer"]
 visible = false
@@ -883,8 +862,6 @@ __meta__ = {
 [connection signal="button_up" from="TabContainer/Character/SkinToneLabel/Right" to="." method="_on_Color_Selection_button_up" binds= [ 1, "Skintone" ]]
 [connection signal="button_up" from="TabContainer/Character/BodyLabel/Left" to="." method="_on_Sprite_Selection_button_up" binds= [ -1, "Body" ]]
 [connection signal="button_up" from="TabContainer/Character/BodyLabel/Right" to="." method="_on_Sprite_Selection_button_up" binds= [ 1, "Body" ]]
-[connection signal="button_up" from="TabContainer/Character/FemaleButton" to="." method="_on_GenderButton_button_up" binds= [ "Female" ]]
-[connection signal="button_up" from="TabContainer/Character/MaleButton" to="." method="_on_GenderButton_button_up" binds= [ "Male" ]]
 [connection signal="button_up" from="TabContainer/Head/Accesory3ColorLabel/Left" to="." method="_on_Color_Selection_button_up" binds= [ -1, "Accessory3" ]]
 [connection signal="button_up" from="TabContainer/Head/Accesory3ColorLabel/Right" to="." method="_on_Color_Selection_button_up" binds= [ 1, "Accessory3" ]]
 [connection signal="button_up" from="TabContainer/Head/Accessory3Label/Left" to="." method="_on_Sprite_Selection_button_up" binds= [ -1, "Accessory3" ]]

@@ -1,29 +1,33 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://Scripts/PlayerSprites.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Shaders/PaletteSwap.shader" type="Shader" id=2]
 [ext_resource path="res://Assets/Palettes/Hair/Haircolor_000.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Palettes/Hair/Haircolor_005.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Character/Female/AvThn/HairB/Female_AvThn_HairB_001.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Character/16x32/HairB/hairb_000.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Palettes/Bottom/Bottomcolor_000.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Palettes/Bottom/Bottomcolor_001.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Character/Female/AvThn/Body/Female_AvThn_Body.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Character/Female/AvThn/BottomA/Female_AvThn_BottomA_001.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Character/Female/AvThn/Shoes/Female_AvThn_Shoes_001.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Character/Female/AvThn/TopA/Female_AvThn_TopA_001.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Character/Female/AvThn/BottomB/Female_AvThn_BottomB_001.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Character/Female/AvThn/Arms/Female_AvThn_Arms_001.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Character/Female/AvThn/TopB/Female_AvThn_TopB_001.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Character/Female/AvThn/Head/Female_AvThn_Head.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Character/Female/AvThn/Eyes/Female_AvThn_Eyes_001.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Character/Female/AvThn/HairA/Female_AvThn_HairA_001.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Character/Female/AvThn/HairC/Female_AvThn_HairC_001.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Character/Female/AvThn/HairD/Female_AvThn_HairD_001.png" type="Texture" id=19]
-[ext_resource path="res://Assets/Character/Female/AvThn/Accessory3/Female_AvThn_Accessory3_001.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Character/16x32/BottomA/bottoma_000.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Character/16x32/Body/body.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Character/16x32/TopB/topb_000.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Character/16x32/Arms/arms.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Character/16x32/TopA/topa_000.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Character/16x32/Eyes/eyes_001.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Character/16x32/AccessoryC/accessoryc_000.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Character/16x32/AccessoryB/accessoryb_000.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Character/16x32/Shoes/shoes_000.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Character/16x32/JacketA/jacketa_000.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Character/16x32/Head/head.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Character/16x32/JacketB/jacketb_000.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Character/16x32/HairC/hairc_000.png" type="Texture" id=20]
 [ext_resource path="res://Resources/Animations/idle_back.tres" type="Animation" id=21]
 [ext_resource path="res://Resources/Animations/idle_front.tres" type="Animation" id=22]
 [ext_resource path="res://Resources/Animations/idle_left.tres" type="Animation" id=23]
 [ext_resource path="res://Resources/Animations/idle_right.tres" type="Animation" id=24]
+[ext_resource path="res://Assets/Character/16x32/AccessoryA/accessorya_000.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Character/16x32/BottomB/bottomb_000.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Character/16x32/HairA/haira_001.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Character/16x32/HairD/haird_000.png" type="Texture" id=28]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 2 )
@@ -232,7 +236,7 @@ tracks/11/keys = {
 "values": [ 24, 25, 26, 27, 28, 29, 30, 31 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("SpriteHolder/Accessory2:frame")
+tracks/12/path = NodePath("SpriteHolder/AccessoryB:frame")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -256,7 +260,7 @@ tracks/13/keys = {
 "values": [ 24, 25, 26, 27, 28, 29, 30, 31 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("SpriteHolder/Accessory1:frame")
+tracks/14/path = NodePath("SpriteHolder/AccessoryA:frame")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -292,7 +296,7 @@ tracks/16/keys = {
 "values": [ 24, 25, 26, 27, 28, 29, 30, 31 ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("SpriteHolder/Accessory3:frame")
+tracks/17/path = NodePath("SpriteHolder/AccessoryC:frame")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -453,7 +457,7 @@ tracks/11/keys = {
 "values": [ 40, 41, 42, 43, 44, 45, 46, 47 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("SpriteHolder/Accessory2:frame")
+tracks/12/path = NodePath("SpriteHolder/AccessoryB:frame")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -477,7 +481,7 @@ tracks/13/keys = {
 "values": [ 40, 41, 42, 43, 44, 45, 46, 47 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("SpriteHolder/Accessory1:frame")
+tracks/14/path = NodePath("SpriteHolder/AccessoryA:frame")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -513,7 +517,7 @@ tracks/16/keys = {
 "values": [ 40, 41, 42, 43, 44, 45, 46, 47 ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("SpriteHolder/Accessory3:frame")
+tracks/17/path = NodePath("SpriteHolder/AccessoryC:frame")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -661,7 +665,7 @@ tracks/10/keys = {
 "values": [ 16, 17, 18, 19, 20, 21, 22, 23 ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("SpriteHolder/Accessory2:frame")
+tracks/11/path = NodePath("SpriteHolder/AccessoryB:frame")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -685,7 +689,7 @@ tracks/12/keys = {
 "values": [ 16, 17, 18, 19, 20, 21, 22, 23 ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("SpriteHolder/Accessory1:frame")
+tracks/13/path = NodePath("SpriteHolder/AccessoryA:frame")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -721,7 +725,7 @@ tracks/15/keys = {
 "values": [ 16, 17, 18, 19, 20, 21, 22, 23 ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("SpriteHolder/Accessory3:frame")
+tracks/16/path = NodePath("SpriteHolder/AccessoryC:frame")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -893,7 +897,7 @@ tracks/11/keys = {
 "values": [ 32, 33, 34, 35, 36, 37, 38, 39 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("SpriteHolder/Accessory2:frame")
+tracks/12/path = NodePath("SpriteHolder/AccessoryB:frame")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -917,7 +921,7 @@ tracks/13/keys = {
 "values": [ 32, 33, 34, 35, 36, 37, 38, 39 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("SpriteHolder/Accessory1:frame")
+tracks/14/path = NodePath("SpriteHolder/AccessoryA:frame")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -953,7 +957,7 @@ tracks/16/keys = {
 "values": [ 32, 33, 34, 35, 36, 37, 38, 39 ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("SpriteHolder/Accessory3:frame")
+tracks/17/path = NodePath("SpriteHolder/AccessoryC:frame")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -974,123 +978,109 @@ script = ExtResource( 1 )
 material = SubResource( 1 )
 texture = ExtResource( 5 )
 hframes = 8
-vframes = 10
-frame = 4
+vframes = 8
 
 [node name="Body" type="Sprite" parent="SpriteHolder"]
 material = SubResource( 2 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 hframes = 8
-vframes = 10
-frame = 4
+vframes = 8
 
 [node name="BottomA" type="Sprite" parent="SpriteHolder"]
 material = SubResource( 3 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 hframes = 8
-vframes = 10
-frame = 4
+vframes = 8
 
 [node name="Shoes" type="Sprite" parent="SpriteHolder"]
 material = SubResource( 4 )
-texture = ExtResource( 10 )
+texture = ExtResource( 16 )
 hframes = 8
-vframes = 10
-frame = 4
+vframes = 8
 
 [node name="TopA" type="Sprite" parent="SpriteHolder"]
 material = SubResource( 5 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 hframes = 8
-vframes = 10
-frame = 4
+vframes = 8
 
 [node name="BottomB" type="Sprite" parent="SpriteHolder"]
 material = SubResource( 6 )
-texture = ExtResource( 12 )
+texture = ExtResource( 26 )
 hframes = 8
-vframes = 10
-frame = 4
+vframes = 8
 
 [node name="Arms" type="Sprite" parent="SpriteHolder"]
 material = SubResource( 7 )
-texture = ExtResource( 13 )
+texture = ExtResource( 11 )
 hframes = 8
-vframes = 10
-frame = 4
+vframes = 8
 
 [node name="JacketA" type="Sprite" parent="SpriteHolder"]
 material = SubResource( 8 )
+texture = ExtResource( 17 )
 hframes = 8
-vframes = 10
-frame = 4
+vframes = 8
 
 [node name="TopB" type="Sprite" parent="SpriteHolder"]
 material = SubResource( 9 )
-texture = ExtResource( 14 )
+texture = ExtResource( 10 )
 hframes = 8
-vframes = 10
-frame = 4
+vframes = 8
 
 [node name="JacketB" type="Sprite" parent="SpriteHolder"]
 material = SubResource( 10 )
+texture = ExtResource( 19 )
 hframes = 8
-vframes = 10
-frame = 4
+vframes = 8
 
 [node name="Head" type="Sprite" parent="SpriteHolder"]
 material = SubResource( 11 )
-texture = ExtResource( 15 )
+texture = ExtResource( 18 )
 hframes = 8
-vframes = 10
-frame = 4
+vframes = 8
 
 [node name="Eyes" type="Sprite" parent="SpriteHolder"]
 material = SubResource( 12 )
-texture = ExtResource( 16 )
+texture = ExtResource( 13 )
 hframes = 8
-vframes = 10
-frame = 4
+vframes = 8
 
-[node name="Accessory2" type="Sprite" parent="SpriteHolder"]
+[node name="AccessoryB" type="Sprite" parent="SpriteHolder"]
 material = SubResource( 13 )
+texture = ExtResource( 15 )
 hframes = 8
-vframes = 10
-frame = 4
+vframes = 8
 
 [node name="HairA" type="Sprite" parent="SpriteHolder"]
 material = SubResource( 14 )
-texture = ExtResource( 17 )
+texture = ExtResource( 27 )
 hframes = 8
-vframes = 10
-frame = 4
+vframes = 8
 
-[node name="Accessory1" type="Sprite" parent="SpriteHolder"]
+[node name="AccessoryA" type="Sprite" parent="SpriteHolder"]
 material = SubResource( 15 )
+texture = ExtResource( 25 )
 hframes = 8
-vframes = 10
-frame = 4
+vframes = 8
 
 [node name="HairC" type="Sprite" parent="SpriteHolder"]
 material = SubResource( 16 )
-texture = ExtResource( 18 )
+texture = ExtResource( 20 )
 hframes = 8
-vframes = 10
-frame = 4
+vframes = 8
 
 [node name="HairD" type="Sprite" parent="SpriteHolder"]
 material = SubResource( 17 )
-texture = ExtResource( 19 )
+texture = ExtResource( 28 )
 hframes = 8
-vframes = 10
-frame = 4
+vframes = 8
 
-[node name="Accessory3" type="Sprite" parent="SpriteHolder"]
+[node name="AccessoryC" type="Sprite" parent="SpriteHolder"]
 material = SubResource( 18 )
-texture = ExtResource( 20 )
+texture = ExtResource( 14 )
 hframes = 8
-vframes = 10
-frame = 4
+vframes = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle_back = ExtResource( 21 )

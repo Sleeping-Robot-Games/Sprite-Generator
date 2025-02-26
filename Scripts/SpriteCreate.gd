@@ -1,9 +1,9 @@
 extends Node2D
 
 onready var player_sprite: Dictionary = {
-	'Accessory1': $PlayerSprites/SpriteHolder/Accessory1,
-	'Accessory2': $PlayerSprites/SpriteHolder/Accessory2,
-	'Accessory3': $PlayerSprites/SpriteHolder/Accessory3,
+	'AccessoryA': $PlayerSprites/SpriteHolder/AccessoryA,
+	'AccessoryB': $PlayerSprites/SpriteHolder/AccessoryB,
+	'AccessoryC': $PlayerSprites/SpriteHolder/AccessoryC,
 	'Arms': $PlayerSprites/SpriteHolder/Arms,
 	'Body': $PlayerSprites/SpriteHolder/Body,
 	'BottomA': $PlayerSprites/SpriteHolder/BottomA,
@@ -22,9 +22,9 @@ onready var player_sprite: Dictionary = {
 }
 
 onready var palette_sprite_dict: Dictionary = {
-	'Accessory1': [player_sprite['Accessory1']],
-	'Accessory2': [player_sprite['Accessory2']],
-	'Accessory3': [player_sprite['Accessory3']],
+	'AccessoryA': [player_sprite['AccessoryA']],
+	'AccessoryB': [player_sprite['AccessoryB']],
+	'AccessoryC': [player_sprite['AccessoryC']],
 	'Bottom': [
 		player_sprite['BottomA'], player_sprite['BottomB']
 	],
@@ -55,9 +55,9 @@ onready var sprite_generator = get_parent().get_node("Generator")
 
 var pallete_sprite_state: Dictionary
 var sprite_state: Dictionary = {
-	'Accessory1': '',
-	'Accessory2': '',
-	'Accessory3': '',
+	'AccessoryA': '',
+	'AccessoryB': '',
+	'AccessoryC': '',
 	'Arms': '',
 	'Body': '',
 	'BottomA': '',
@@ -76,19 +76,16 @@ var sprite_state: Dictionary = {
 }
 
 var player_name: String
-var farm_name: String
-var gender: String = "Female" # Temp hardcoded
-var body: String = "AvThn" # Temp hardcoded
 
-var sprite_folder_path = "res://Assets/Character/"
+var sprite_folder_path = "res://Assets/Character/16x32/"
 var palette_folder_path = "res://Assets/Palettes"
 
 var current_animation = 0
 
 func _ready():
 	$TabContainer/Character/CharacterTabRandom.connect('button_up', self, '_on_Random_Tab_button_up', [[],['Skintone']])
-	$TabContainer/Head/HeadTabRandom.connect('button_up', self, '_on_Random_Tab_button_up', [['HairA', 'HairB', 'HairC', 'HairD', 'Eyes', 'Head', 'Accessory2', 'Accessory3'],['Hair', 'Eye', 'Accessory2', 'Accessory3']])
-	$TabContainer/Top/TopTabRandom.connect('button_up', self, '_on_Random_Tab_button_up', [['Accessory1', 'JacketA', 'JacketB', 'TopA', 'TopB'],['Accessory1', 'Jacket', 'Top']])
+	$TabContainer/Head/HeadTabRandom.connect('button_up', self, '_on_Random_Tab_button_up', [['HairA', 'HairB', 'HairC', 'HairD', 'Eyes', 'Head', 'AccessoryB', 'AccessoryC'],['Hair', 'Eye', 'AccessoryB', 'AccessoryC']])
+	$TabContainer/Top/TopTabRandom.connect('button_up', self, '_on_Random_Tab_button_up', [['AccessoryA', 'JacketA', 'JacketB', 'TopA', 'TopB'],['AccessoryA', 'Jacket', 'Top']])
 	$TabContainer/Bottom/BottomTabRandom.connect('button_up', self, '_on_Random_Tab_button_up', [['BottomA', 'BottomB', 'Shoes'], ['Bottom', 'Shoe']])
 	create_random_character()
 	$PlayerSprites/AnimationPlayer.play("idle_front")
@@ -126,7 +123,7 @@ func set_random_color(palette_type: String) -> void:
 		pallete_sprite_state[palette_type] = color_num
 		
 func set_random_texture(sprite_name: String) -> void:
-	var random_sprite = random_asset(sprite_folder_path + "{gender}/{body}".format({"gender": gender, "body": body}) +"/"+sprite_name)
+	var random_sprite = random_asset(sprite_folder_path + sprite_name)
 	if random_sprite == "": # No assets in the folder yet continue to next folder
 		return
 	if "000" in random_sprite and not "Accessory" in random_sprite: # Prevent some empty sprite sheets
@@ -137,7 +134,7 @@ func set_random_texture(sprite_name: String) -> void:
 	set_sprite_texture(sprite_name, random_sprite)
 
 func create_random_character() -> void:
-	var sprite_folders = g.files_in_dir(sprite_folder_path + "{gender}/{body}".format({"gender": gender, "body": body}))
+	var sprite_folders = g.files_in_dir(sprite_folder_path)
 	var palette_folders = g.files_in_dir(palette_folder_path)
 	for folder in sprite_folders:
 		if folder == 'HairD':
@@ -154,17 +151,13 @@ func ensure_jacket_state():
 
 func ensure_hair(sprite_name):
 	if sprite_name == 'HairB':
-		var hair_d_texture = sprite_folder_path + "{gender}/{body}".format({"gender": gender, "body": body}) + '/HairD/' + gender + "_" + body + '_' + 'HairD_' + get_sprite_number_from_name(sprite_name) + '.png'
+		var hair_d_texture = sprite_folder_path + '/HairD/' + 'haird_' + get_sprite_number_from_name(sprite_name) + '.png'
 		player_sprite['HairD'].set_texture(load(hair_d_texture))
 	if sprite_name == 'HairC' and get_sprite_number_from_name("HairA") == '001':
 		player_sprite['HairC'].set_texture(null)
 
 func get_sprite_number_from_name(sprite_name):
 	return sprite_state[sprite_name].substr(len(sprite_state[sprite_name]) - 7, 3)
-
-func _on_GenderButton_button_up(_gender):
-	gender = _gender
-	create_random_character()
 
 func _on_Random_button_up():
 	create_random_character()
@@ -179,7 +172,7 @@ func _on_Turn_button_up(direction):
 func _on_Sprite_Selection_button_up(direction: int, sprite: String):
 	# TODO: Figure out how to select new a body
 	if not sprite == "Body":
-		var folder_path = "res://Assets/Character/"+gender+"/"+body+"/"+sprite+"/"
+		var folder_path = sprite_folder_path+sprite+"/"
 		var files = g.files_in_dir(folder_path)
 		var file = sprite_state[sprite].split("/")[-1]
 		var current_index = files.find(file)

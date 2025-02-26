@@ -91,9 +91,9 @@ func load_sprite(sprite_holder: Node2D, state: Dictionary):
 
 func get_palette_folder_name_from_sprite(sprite: Sprite):
 	var reverse_palette_dictionary = {
-		'Accessory1': 'Accessory1',
-		'Accessory2': 'Accessory2',
-		'Accessory3': 'Accessory3',
+		'AccessoryA': 'AccessoryA',
+		'AccessoryB': 'AccessoryB',
+		'AccessoryC': 'AccessoryC',
 		'Arms': 'Skintone',
 		'Body': 'Skintone',
 		'BottomA': 'Bottom',
