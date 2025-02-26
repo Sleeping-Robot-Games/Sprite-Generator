@@ -797,8 +797,8 @@ __meta__ = {
 }
 
 [node name="PlayerSprites" parent="." instance=ExtResource( 5 )]
-position = Vector2( 140.825, 249.723 )
-scale = Vector2( 4, 4 )
+position = Vector2( 140, 205 )
+scale = Vector2( 8, 8 )
 
 [node name="Random" type="Button" parent="."]
 margin_left = 227.0
