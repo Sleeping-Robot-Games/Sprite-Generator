@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/SpriteCreate.gd" type="Script" id=1]
 [ext_resource path="res://Resources/ButtonGroups/genderButtonGroup.tres" type="ButtonGroup" id=2]
 [ext_resource path="res://Assets/DressUp/Female.png" type="Texture" id=3]
 [ext_resource path="res://Assets/DressUp/Male.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/PlayerSprites.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Ui/uitheme.tres" type="Theme" id=6]
 
 [node name="SpriteCreate" type="Node2D"]
 script = ExtResource( 1 )
@@ -18,18 +19,16 @@ margin_left = 252.0
 margin_top = 89.0
 margin_right = 617.0
 margin_bottom = 397.0
+theme = ExtResource( 6 )
 tab_align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Character" type="Tabs" parent="TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_left = 2.0
+margin_top = 20.0
+margin_right = -2.0
+margin_bottom = -2.0
 
 [node name="NameLabel" type="Label" parent="TabContainer/Character"]
 margin_left = 64.4753
