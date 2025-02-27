@@ -7,11 +7,9 @@
 [ext_resource path="res://Assets/Character/16x32/HairB/hairb_000.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Palettes/Bottom/Bottomcolor_000.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Palettes/Bottom/Bottomcolor_001.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Character/16x32/BottomA/bottoma_000.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Character/16x32/Body/body.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Character/16x32/TopB/topb_000.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Character/16x32/Arms/arms.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Character/16x32/TopA/topa_000.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Character/16x32/Eyes/eyes_001.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Character/16x32/AccessoryC/accessoryc_000.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Character/16x32/AccessoryB/accessoryb_000.png" type="Texture" id=15]
@@ -29,6 +27,18 @@
 [ext_resource path="res://Assets/Character/16x32/HairA/haira_001.png" type="Texture" id=27]
 [ext_resource path="res://Assets/Character/16x32/HairD/haird_000.png" type="Texture" id=28]
 
+[sub_resource type="ShaderMaterial" id=15]
+shader = ExtResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=13]
+shader = ExtResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=18]
+shader = ExtResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = ExtResource( 2 )
+
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 2 )
 shader_param/palette_swap = ExtResource( 7 )
@@ -37,34 +47,13 @@ shader_param/greyscale_palette = ExtResource( 6 )
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 2 )
 
-[sub_resource type="ShaderMaterial" id=4]
-shader = ExtResource( 2 )
-
-[sub_resource type="ShaderMaterial" id=5]
-shader = ExtResource( 2 )
+[sub_resource type="StreamTexture" id=23]
+load_path = "res://.import/bottoma_000.png-983ef3bb9112ac3ad671f67c1b7ca042.stex"
 
 [sub_resource type="ShaderMaterial" id=6]
 shader = ExtResource( 2 )
 
-[sub_resource type="ShaderMaterial" id=7]
-shader = ExtResource( 2 )
-
-[sub_resource type="ShaderMaterial" id=8]
-shader = ExtResource( 2 )
-
-[sub_resource type="ShaderMaterial" id=9]
-shader = ExtResource( 2 )
-
-[sub_resource type="ShaderMaterial" id=10]
-shader = ExtResource( 2 )
-
-[sub_resource type="ShaderMaterial" id=11]
-shader = ExtResource( 2 )
-
 [sub_resource type="ShaderMaterial" id=12]
-shader = ExtResource( 2 )
-
-[sub_resource type="ShaderMaterial" id=13]
 shader = ExtResource( 2 )
 
 [sub_resource type="ShaderMaterial" id=14]
@@ -75,16 +64,31 @@ shader = ExtResource( 2 )
 shader_param/palette_swap = ExtResource( 4 )
 shader_param/greyscale_palette = ExtResource( 3 )
 
-[sub_resource type="ShaderMaterial" id=15]
-shader = ExtResource( 2 )
-
 [sub_resource type="ShaderMaterial" id=16]
 shader = ExtResource( 2 )
 
 [sub_resource type="ShaderMaterial" id=17]
 shader = ExtResource( 2 )
 
-[sub_resource type="ShaderMaterial" id=18]
+[sub_resource type="ShaderMaterial" id=11]
+shader = ExtResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = ExtResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = ExtResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 2 )
+
+[sub_resource type="StreamTexture" id=24]
+load_path = "res://.import/topa_000.png-4e0632f673d775c71f4fddf93d58a189.stex"
+
+[sub_resource type="ShaderMaterial" id=9]
 shader = ExtResource( 2 )
 
 [sub_resource type="Animation" id=19]
@@ -974,131 +978,113 @@ script = ExtResource( 1 )
 
 [node name="SpriteHolder" type="Node2D" parent="."]
 
-[node name="Body" type="Sprite" parent="SpriteHolder"]
-material = SubResource( 2 )
-texture = ExtResource( 9 )
+[node name="AccessoryA" type="Sprite" parent="SpriteHolder"]
+material = SubResource( 15 )
+texture = ExtResource( 25 )
 hframes = 8
 vframes = 8
-frame = 39
-
-[node name="BottomA" type="Sprite" parent="SpriteHolder"]
-material = SubResource( 3 )
-texture = ExtResource( 8 )
-hframes = 8
-vframes = 8
-frame = 39
-
-[node name="Shoes" type="Sprite" parent="SpriteHolder"]
-material = SubResource( 4 )
-texture = ExtResource( 16 )
-hframes = 8
-vframes = 8
-frame = 39
-
-[node name="TopA" type="Sprite" parent="SpriteHolder"]
-material = SubResource( 5 )
-texture = ExtResource( 12 )
-hframes = 8
-vframes = 8
-frame = 39
-
-[node name="BottomB" type="Sprite" parent="SpriteHolder"]
-material = SubResource( 6 )
-texture = ExtResource( 26 )
-hframes = 8
-vframes = 8
-frame = 39
-
-[node name="Arms" type="Sprite" parent="SpriteHolder"]
-material = SubResource( 7 )
-texture = ExtResource( 11 )
-hframes = 8
-vframes = 8
-frame = 39
-
-[node name="JacketA" type="Sprite" parent="SpriteHolder"]
-material = SubResource( 8 )
-texture = ExtResource( 17 )
-hframes = 8
-vframes = 8
-frame = 39
-
-[node name="TopB" type="Sprite" parent="SpriteHolder"]
-material = SubResource( 9 )
-texture = ExtResource( 10 )
-hframes = 8
-vframes = 8
-frame = 39
-
-[node name="JacketB" type="Sprite" parent="SpriteHolder"]
-material = SubResource( 10 )
-texture = ExtResource( 19 )
-hframes = 8
-vframes = 8
-frame = 39
-
-[node name="Head" type="Sprite" parent="SpriteHolder"]
-material = SubResource( 11 )
-texture = ExtResource( 18 )
-hframes = 8
-vframes = 8
-frame = 39
-
-[node name="Eyes" type="Sprite" parent="SpriteHolder"]
-material = SubResource( 12 )
-texture = ExtResource( 13 )
-hframes = 8
-vframes = 8
-frame = 39
 
 [node name="AccessoryB" type="Sprite" parent="SpriteHolder"]
 material = SubResource( 13 )
 texture = ExtResource( 15 )
 hframes = 8
 vframes = 8
-frame = 39
-
-[node name="HairA" type="Sprite" parent="SpriteHolder"]
-material = SubResource( 14 )
-texture = ExtResource( 27 )
-hframes = 8
-vframes = 8
-frame = 39
-
-[node name="HairB" type="Sprite" parent="SpriteHolder"]
-material = SubResource( 1 )
-texture = ExtResource( 5 )
-hframes = 8
-vframes = 8
-frame = 39
-
-[node name="AccessoryA" type="Sprite" parent="SpriteHolder"]
-material = SubResource( 15 )
-texture = ExtResource( 25 )
-hframes = 8
-vframes = 8
-frame = 39
-
-[node name="HairC" type="Sprite" parent="SpriteHolder"]
-material = SubResource( 16 )
-texture = ExtResource( 20 )
-hframes = 8
-vframes = 8
-frame = 39
-
-[node name="HairD" type="Sprite" parent="SpriteHolder"]
-material = SubResource( 17 )
-texture = ExtResource( 28 )
-hframes = 8
-vframes = 8
-frame = 39
 
 [node name="AccessoryC" type="Sprite" parent="SpriteHolder"]
 material = SubResource( 18 )
 texture = ExtResource( 14 )
 hframes = 8
 vframes = 8
-frame = 39
+
+[node name="Arms" type="Sprite" parent="SpriteHolder"]
+material = SubResource( 7 )
+texture = ExtResource( 11 )
+hframes = 8
+vframes = 8
+
+[node name="Body" type="Sprite" parent="SpriteHolder"]
+material = SubResource( 2 )
+texture = ExtResource( 9 )
+hframes = 8
+vframes = 8
+
+[node name="BottomA" type="Sprite" parent="SpriteHolder"]
+material = SubResource( 3 )
+texture = SubResource( 23 )
+hframes = 8
+vframes = 8
+
+[node name="BottomB" type="Sprite" parent="SpriteHolder"]
+material = SubResource( 6 )
+texture = ExtResource( 26 )
+hframes = 8
+vframes = 8
+
+[node name="Eyes" type="Sprite" parent="SpriteHolder"]
+material = SubResource( 12 )
+texture = ExtResource( 13 )
+hframes = 8
+vframes = 8
+
+[node name="HairA" type="Sprite" parent="SpriteHolder"]
+material = SubResource( 14 )
+texture = ExtResource( 27 )
+hframes = 8
+vframes = 8
+
+[node name="HairB" type="Sprite" parent="SpriteHolder"]
+material = SubResource( 1 )
+texture = ExtResource( 5 )
+hframes = 8
+vframes = 8
+
+[node name="HairC" type="Sprite" parent="SpriteHolder"]
+material = SubResource( 16 )
+texture = ExtResource( 20 )
+hframes = 8
+vframes = 8
+
+[node name="HairD" type="Sprite" parent="SpriteHolder"]
+material = SubResource( 17 )
+texture = ExtResource( 28 )
+hframes = 8
+vframes = 8
+
+[node name="Head" type="Sprite" parent="SpriteHolder"]
+material = SubResource( 11 )
+texture = ExtResource( 18 )
+hframes = 8
+vframes = 8
+
+[node name="JacketA" type="Sprite" parent="SpriteHolder"]
+material = SubResource( 8 )
+texture = ExtResource( 17 )
+hframes = 8
+vframes = 8
+
+[node name="JacketB" type="Sprite" parent="SpriteHolder"]
+material = SubResource( 10 )
+texture = ExtResource( 19 )
+hframes = 8
+vframes = 8
+
+[node name="Shoes" type="Sprite" parent="SpriteHolder"]
+material = SubResource( 4 )
+texture = ExtResource( 16 )
+hframes = 8
+vframes = 8
+
+[node name="TopA" type="Sprite" parent="SpriteHolder"]
+material = SubResource( 5 )
+texture = SubResource( 24 )
+hframes = 8
+vframes = 8
+
+[node name="TopB" type="Sprite" parent="SpriteHolder"]
+material = SubResource( 9 )
+texture = ExtResource( 10 )
+hframes = 8
+vframes = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle_back = ExtResource( 21 )

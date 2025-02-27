@@ -38,6 +38,9 @@ func set_node_indices(direction):
 	for sprite in $SpriteHolder.get_children():
 		var sprite_name = sprite.name
 		var index_val = z_index_library.get(sprite_name, {}).get(direction, -1)
+		
+		# Uses z_index property instead of ordering the index of sprites in the tree now
+		sprite.z_index = index_val
 
 		# Sanity check: Ensure the index is valid
 		if index_val == -1:
