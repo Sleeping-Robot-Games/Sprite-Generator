@@ -165,7 +165,8 @@ func ensure_jacket_state():
 func ensure_hair(sprite_name):
 	if sprite_name == 'HairB':
 		var hair_d_texture = sprite_folder_path + '/HairD/' + 'haird_' + get_sprite_number_from_name(sprite_name) + '.png'
-		player_sprite['HairD'].set_texture(load(hair_d_texture))
+		if ResourceLoader.exists(hair_d_texture):
+			player_sprite['HairD'].set_texture(load(hair_d_texture))
 	if sprite_name == 'HairC' and get_sprite_number_from_name("HairA") == '001':
 		player_sprite['HairC'].set_texture(null)
 
