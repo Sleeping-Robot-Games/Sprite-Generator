@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/topa_000.png-4e0632f673d775c71f4fddf93d58a189.stex"
+path="res://.import/accessoryb_001.png-431aa49947d11257facff62aaaff9805.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Character/16x32/TopA/topa_000.png"
-dest_files=[ "res://.import/topa_000.png-4e0632f673d775c71f4fddf93d58a189.stex" ]
+source_file="res://Assets/Character/16x32/AccessoryB/accessoryb_001.png"
+dest_files=[ "res://.import/accessoryb_001.png-431aa49947d11257facff62aaaff9805.stex" ]
 
 [params]
 

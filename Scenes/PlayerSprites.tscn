@@ -7,13 +7,15 @@
 [ext_resource path="res://Assets/Character/16x32/HairB/hairb_000.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Palettes/Bottom/Bottomcolor_000.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Palettes/Bottom/Bottomcolor_001.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Character/16x32/BottomA/bottoma_001.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Character/16x32/Body/body.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Character/16x32/TopB/topb_000.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Character/16x32/TopB/topb_001.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Character/16x32/Arms/arms.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Character/16x32/TopA/topa_001.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Character/16x32/Eyes/eyes_001.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Character/16x32/AccessoryC/accessoryc_000.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Character/16x32/AccessoryB/accessoryb_000.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Character/16x32/Shoes/shoes_000.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Character/16x32/Shoes/shoes_001.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Character/16x32/JacketA/jacketa_000.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Character/16x32/Head/head.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Character/16x32/JacketB/jacketb_000.png" type="Texture" id=19]
@@ -46,9 +48,6 @@ shader_param/greyscale_palette = ExtResource( 6 )
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 2 )
-
-[sub_resource type="StreamTexture" id=23]
-load_path = "res://.import/bottoma_000.png-983ef3bb9112ac3ad671f67c1b7ca042.stex"
 
 [sub_resource type="ShaderMaterial" id=6]
 shader = ExtResource( 2 )
@@ -84,9 +83,6 @@ shader = ExtResource( 2 )
 
 [sub_resource type="ShaderMaterial" id=5]
 shader = ExtResource( 2 )
-
-[sub_resource type="StreamTexture" id=24]
-load_path = "res://.import/topa_000.png-4e0632f673d775c71f4fddf93d58a189.stex"
 
 [sub_resource type="ShaderMaterial" id=9]
 shader = ExtResource( 2 )
@@ -1010,7 +1006,7 @@ vframes = 8
 
 [node name="BottomA" type="Sprite" parent="SpriteHolder"]
 material = SubResource( 3 )
-texture = SubResource( 23 )
+texture = ExtResource( 8 )
 hframes = 8
 vframes = 8
 
@@ -1076,7 +1072,7 @@ vframes = 8
 
 [node name="TopA" type="Sprite" parent="SpriteHolder"]
 material = SubResource( 5 )
-texture = SubResource( 24 )
+texture = ExtResource( 12 )
 hframes = 8
 vframes = 8
 
