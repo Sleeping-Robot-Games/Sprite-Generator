@@ -25,5 +25,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="WindowChange" type="Button" parent="."]
+margin_left = 27.0
+margin_top = 482.0
+margin_right = 115.0
+margin_bottom = 512.0
+text = "Full Screen"
+
 [connection signal="button_up" from="Create" to="." method="_on_Create_button_up"]
 [connection signal="button_up" from="List" to="." method="_on_List_button_up"]
+[connection signal="pressed" from="WindowChange" to="." method="_on_WindowChange_pressed"]

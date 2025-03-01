@@ -96,6 +96,10 @@ func _process(delta):
 func load_character_from_save():
 	pass
 
+func update_sheet_preview():
+	var state = {'sprite_state': sprite_state, 'palette_state': pallete_sprite_state}
+	sprite_generator.create_spritesheet(state, $Preview)
+
 func set_sprite_texture(sprite_name: String, texture_path: String) -> void:
 	player_sprite[sprite_name].set_texture(load(texture_path))
 	sprite_state[sprite_name] = texture_path
@@ -143,6 +147,9 @@ func create_random_character() -> void:
 	for folder in palette_folders:
 		set_random_color(folder)
 
+	update_sheet_preview()
+	
+
 func ensure_jacket_state():
 	if not '000' in sprite_state['JacketB']:
 		player_sprite['TopB'].set_texture(null)
@@ -170,19 +177,20 @@ func _on_Turn_button_up(direction):
 	$PlayerSprites/AnimationPlayer.play(animations[current_animation])
 	
 func _on_Sprite_Selection_button_up(direction: int, sprite: String):
-	# TODO: Figure out how to select new a body
-	if not sprite == "Body":
-		var folder_path = sprite_folder_path+sprite+"/"
-		var files = g.files_in_dir(folder_path)
-		var file = sprite_state[sprite].split("/")[-1]
-		var current_index = files.find(file)
-		var new_index = current_index + direction
-		if new_index > len(files) - 1:
-			new_index = 0
-		if new_index == -1:
-			new_index = len(files) -1
-		var new_sprite_path = folder_path + files[new_index]
-		set_sprite_texture(sprite, new_sprite_path)
+	var folder_path = sprite_folder_path+sprite+"/"
+	var files = g.files_in_dir(folder_path)
+	var file = sprite_state[sprite].split("/")[-1]
+	var current_index = files.find(file)
+	var new_index = current_index + direction
+	if new_index > len(files) - 1:
+		new_index = 0
+	if new_index == -1:
+		new_index = len(files) -1
+	var new_sprite_path = folder_path + files[new_index]
+	print(new_sprite_path)
+	set_sprite_texture(sprite, new_sprite_path)
+	
+	update_sheet_preview()
 
 func _on_Color_Selection_button_up(direction: int, palette_sprite: String):
 	var folder_path = "res://Assets/Palettes/"+palette_sprite
@@ -196,16 +204,18 @@ func _on_Color_Selection_button_up(direction: int, palette_sprite: String):
 		var color_num = str(new_color).pad_zeros(3)
 		g.set_sprite_color(palette_sprite, sprite, color_num)
 		pallete_sprite_state[palette_sprite] = color_num
+		
+	update_sheet_preview()
 
 func _on_Save_button_up():
 	var player_name = $TabContainer/Character/NameLabel/Name.text
 	if player_name == "":
 		# TODO: if this is true move to character tab and show error
-		$NameLabel/Error.text = "Name is Required"
-		$NameLabel/Error.show()
+		$TabContainer/Character/NameLabel/Error.text = "Name is Required"
+		$TabContainer/Character/NameLabel/Error.show()
 	elif g.sprite_name_exists(player_name):
-		$NameLabel/Error.text = "Name is Taken"
-		$NameLabel/Error.show()
+		$TabContainer/Character/NameLabel/Error.text = "Name is Taken"
+		$TabContainer/Character/NameLabel/Error.show()
 	else:
 		g.save_sprite(sprite_state, pallete_sprite_state, player_name)
 		hide()
@@ -227,4 +237,5 @@ func _on_Random_Tab_button_up(sprites, palettes):
 
 func _on_Export_button_up():
 	var state = {'sprite_state': sprite_state, 'palette_state': pallete_sprite_state}
-	sprite_generator.export_spritesheet(state)
+	sprite_generator.create_spritesheet(state)
+	sprite_generator.export_spritesheet()

@@ -24,7 +24,25 @@ func _ready():
 	
 	# Reorder them based on the direction
 	set_node_indices(sprite_direction)
+	
+func create_character(state: Dictionary):
+	# TODO: Apply palette
+	var sprite_state = state.sprite_state
+	for sprite_name in sprite_state.keys():
+		var texture_path = sprite_state[sprite_name]
+		if texture_path and texture_path != "":
+			var sprite = get_node("SpriteHolder/" + sprite_name)
+			if sprite:
+				sprite.set_texture(load(texture_path))
+			else:
+				print("⚠️ WARNING: Sprite node ", sprite_name, " not found in SpriteHolder!")
+		else:
+			pass
+#			print("WARNING: Texture path not found for ", sprite_name)
 
+	# Ensure correct Z-index ordering
+	set_node_indices(sprite_direction)
+	
 func _process(delta):
 	pass
 
@@ -34,7 +52,7 @@ func load_json(file_path: String) -> Dictionary:
 	var text = file.get_as_text()
 	return JSON.parse(text).result
 
-func set_node_indices(direction):
+func set_node_indices(direction):	
 	for sprite in $SpriteHolder.get_children():
 		var sprite_name = sprite.name
 		var index_val = z_index_library.get(sprite_name, {}).get(direction, -1)
@@ -44,7 +62,7 @@ func set_node_indices(direction):
 
 		# Sanity check: Ensure the index is valid
 		if index_val == -1:
-			print("⚠️ ERROR: Missing z-index for", sprite_name, "in direction:", direction)
+			print("⚠️ ERROR: Missing z-index for ", sprite_name, " in direction:", direction)
 
 
 func _on_AnimationPlayer_animation_started(anim_name: String):

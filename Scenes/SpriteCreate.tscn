@@ -36,9 +36,6 @@ margin_top = 28.0816
 margin_right = 106.475
 margin_bottom = 42.0816
 text = "Name:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Name" type="LineEdit" parent="TabContainer/Character/NameLabel"]
 margin_left = 55.3018
@@ -82,37 +79,6 @@ margin_top = -2.61157
 margin_right = 116.336
 margin_bottom = 17.3885
 text = "Right"
-
-[node name="BodyLabel" type="Label" parent="TabContainer/Character"]
-margin_left = 142.369
-margin_top = 102.199
-margin_right = 184.37
-margin_bottom = 116.199
-text = "Body"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Left" type="Button" parent="TabContainer/Character/BodyLabel"]
-margin_left = -66.8052
-margin_top = -2.7266
-margin_right = -30.8052
-margin_bottom = 17.2734
-text = "Left"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Right" type="Button" parent="TabContainer/Character/BodyLabel"]
-margin_left = 64.9434
-margin_top = -2.8167
-margin_right = 108.944
-margin_bottom = 17.1833
-text = "Right"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="FemaleButton" type="Button" parent="TabContainer/Character"]
 visible = false
@@ -854,11 +820,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Preview" type="Node2D" parent="."]
+position = Vector2( 623, 43 )
+
 [connection signal="text_changed" from="TabContainer/Character/NameLabel/Name" to="." method="_on_Name_text_changed"]
 [connection signal="button_up" from="TabContainer/Character/SkinToneLabel/Left" to="." method="_on_Color_Selection_button_up" binds= [ -1, "Skintone" ]]
 [connection signal="button_up" from="TabContainer/Character/SkinToneLabel/Right" to="." method="_on_Color_Selection_button_up" binds= [ 1, "Skintone" ]]
-[connection signal="button_up" from="TabContainer/Character/BodyLabel/Left" to="." method="_on_Sprite_Selection_button_up" binds= [ -1, "Body" ]]
-[connection signal="button_up" from="TabContainer/Character/BodyLabel/Right" to="." method="_on_Sprite_Selection_button_up" binds= [ 1, "Body" ]]
 [connection signal="button_up" from="TabContainer/Head/Accesory3ColorLabel/Left" to="." method="_on_Color_Selection_button_up" binds= [ -1, "Accessory3" ]]
 [connection signal="button_up" from="TabContainer/Head/Accesory3ColorLabel/Right" to="." method="_on_Color_Selection_button_up" binds= [ 1, "Accessory3" ]]
 [connection signal="button_up" from="TabContainer/Head/Accessory3Label/Left" to="." method="_on_Sprite_Selection_button_up" binds= [ -1, "Accessory3" ]]

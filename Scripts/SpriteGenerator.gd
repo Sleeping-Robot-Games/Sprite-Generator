@@ -20,6 +20,9 @@ var frame_directions = [
 ]
 
 func _ready():
+	pass
+
+func create_spritesheet(state, parent = null):
 	var cell_width = float(sheet_width) / columns  # 384 / 8 = 48
 	var cell_height = float(sheet_height) / rows   # 384 / 8 = 48
 
@@ -44,25 +47,24 @@ func _ready():
 			columns,      # total horizontal frames = 8
 			direction
 		)
-
+		
 		# Center the instance within its (col, row) cell
 		frame_instance.position = Vector2(
 			(col + 0.5) * cell_width,
 			(row + 0.5) * cell_height
 		)
-
-		# Add it to the viewport for rendering
-		$ViewportContainer/Viewport.add_child(frame_instance)
+	
+		if parent:
+			parent.add_child(frame_instance)
+		else:
+			# Add it to the viewport for rendering
+			$ViewportContainer/Viewport.add_child(frame_instance)
 		
-func export_spritesheet(animation_state):
-	show()
+		# Apply the sprite_state
+		frame_instance.create_character(state)
 
-	# If needed, load an animation_state into each child:
-	for child in $ViewportContainer/Viewport.get_children():
-		var sprite_holder = child.get_node("SpriteHolder")
-		# Example method call:
-		#   g.load_sprite(sprite_holder, animation_state)
-		# Or do any other per-frame customization here.
+func export_spritesheet():
+	show()
 	
 	# Start a short timer to allow the viewport to render before capturing
 	$Timer.start()
