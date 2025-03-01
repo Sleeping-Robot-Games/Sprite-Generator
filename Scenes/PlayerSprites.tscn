@@ -1,12 +1,9 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Scripts/PlayerSprites.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Shaders/PaletteSwap.shader" type="Shader" id=2]
-[ext_resource path="res://Assets/Palettes/Hair/Haircolor_000.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Palettes/Hair/Haircolor_005.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Palettes/Skintone/palette.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Character/16x32/HairB/hairb_000.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Palettes/Bottom/Bottomcolor_000.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Palettes/Bottom/Bottomcolor_001.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Character/16x32/BottomA/bottoma_001.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Character/16x32/Body/body.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Character/16x32/TopB/topb_001.png" type="Texture" id=10]
@@ -31,61 +28,94 @@
 
 [sub_resource type="ShaderMaterial" id=15]
 shader = ExtResource( 2 )
+shader_param/total_rows = 4
+shader_param/color_row = 1
 
 [sub_resource type="ShaderMaterial" id=13]
 shader = ExtResource( 2 )
+shader_param/total_rows = 4
+shader_param/color_row = 1
 
 [sub_resource type="ShaderMaterial" id=18]
 shader = ExtResource( 2 )
+shader_param/total_rows = 4
+shader_param/color_row = 1
 
 [sub_resource type="ShaderMaterial" id=7]
 shader = ExtResource( 2 )
+shader_param/total_rows = 4
+shader_param/color_row = 1
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 2 )
-shader_param/palette_swap = ExtResource( 7 )
-shader_param/greyscale_palette = ExtResource( 6 )
+shader_param/total_rows = 4
+shader_param/color_row = 1
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 2 )
+shader_param/total_rows = 4
+shader_param/color_row = 1
 
 [sub_resource type="ShaderMaterial" id=6]
 shader = ExtResource( 2 )
+shader_param/total_rows = 4
+shader_param/color_row = 1
 
 [sub_resource type="ShaderMaterial" id=12]
 shader = ExtResource( 2 )
+shader_param/total_rows = 4
+shader_param/color_row = 1
 
 [sub_resource type="ShaderMaterial" id=14]
 shader = ExtResource( 2 )
+shader_param/total_rows = 4
+shader_param/color_row = 1
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 2 )
-shader_param/palette_swap = ExtResource( 4 )
-shader_param/greyscale_palette = ExtResource( 3 )
+shader_param/total_rows = 4
+shader_param/color_row = 1
 
 [sub_resource type="ShaderMaterial" id=16]
 shader = ExtResource( 2 )
+shader_param/total_rows = 4
+shader_param/color_row = 1
 
 [sub_resource type="ShaderMaterial" id=17]
 shader = ExtResource( 2 )
+shader_param/total_rows = 4
+shader_param/color_row = 1
 
 [sub_resource type="ShaderMaterial" id=11]
 shader = ExtResource( 2 )
+shader_param/total_rows = 7
+shader_param/color_row = 1
+shader_param/palette = ExtResource( 3 )
 
 [sub_resource type="ShaderMaterial" id=8]
 shader = ExtResource( 2 )
+shader_param/total_rows = 4
+shader_param/color_row = 1
 
 [sub_resource type="ShaderMaterial" id=10]
 shader = ExtResource( 2 )
+shader_param/total_rows = 4
+shader_param/color_row = 1
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 2 )
+shader_param/total_rows = 4
+shader_param/color_row = 1
 
 [sub_resource type="ShaderMaterial" id=5]
 shader = ExtResource( 2 )
+shader_param/total_rows = 4
+shader_param/color_row = 1
 
 [sub_resource type="ShaderMaterial" id=9]
 shader = ExtResource( 2 )
+shader_param/total_rows = 4
+shader_param/color_row = 1
 
 [sub_resource type="Animation" id=19]
 resource_name = "walk_back"

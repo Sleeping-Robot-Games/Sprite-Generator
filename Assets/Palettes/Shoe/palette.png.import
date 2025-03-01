@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Skintonecolor_002.png-0676f8b8f4217ae5312e38cc72552896.stex"
+path="res://.import/palette.png-c0a67908fdb262e0e56595f9ae346d67.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Palettes/Skintone/Skintonecolor_002.png"
-dest_files=[ "res://.import/Skintonecolor_002.png-0676f8b8f4217ae5312e38cc72552896.stex" ]
+source_file="res://Assets/Palettes/Shoe/palette.png"
+dest_files=[ "res://.import/palette.png-c0a67908fdb262e0e56595f9ae346d67.stex" ]
 
 [params]
 
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

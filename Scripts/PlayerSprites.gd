@@ -28,6 +28,8 @@ func _ready():
 func create_character(state: Dictionary):
 	# TODO: Apply palette
 	var sprite_state = state.sprite_state
+	var palette_state = state.palette_state
+	
 	for sprite_name in sprite_state.keys():
 		var texture_path = sprite_state[sprite_name]
 		if texture_path and texture_path != "":
@@ -35,11 +37,11 @@ func create_character(state: Dictionary):
 			if sprite:
 				sprite.set_texture(load(texture_path))
 			else:
-				print("⚠️ WARNING: Sprite node ", sprite_name, " not found in SpriteHolder!")
+				print("⚠️WARNING: Sprite node ", sprite_name, " not found in SpriteHolder!")
 		else:
 			pass
 #			print("WARNING: Texture path not found for ", sprite_name)
-
+	
 	# Ensure correct Z-index ordering
 	set_node_indices(sprite_direction)
 	

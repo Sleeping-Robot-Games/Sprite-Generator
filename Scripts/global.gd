@@ -54,42 +54,46 @@ func load_all_sprites():
 		f.close()
 		##
 		return character_array
-	
+
+
+### NOT USED YET ###
 func load_sprite_from_name(parent_node: Node2D, sprite_name: String):
 	var f = File.new()
 	f.open("user://characters.save", File.READ)
 	var json = JSON.parse(f.get_as_text())
 	f.close()
-	var character_array: Array = json.result
-	var sprite = find_sprite_by_name(character_array, sprite_name)
-	for part in parent_node.get_children():
-		if part.name == "JacketB":
-			continue
-		if part.name in sprite.sprite_state.keys():
-			part.texture = load(sprite.sprite_state[part.name])
-		else:
-			continue
-		var folder = get_palette_folder_name_from_sprite(part)
-		var number = sprite.palette_state[folder]
-		set_sprite_color(folder, part, number)
+#	var character_array: Array = json.result
+#	var sprite = find_sprite_by_name(character_array, sprite_name)
+#	for part in parent_node.get_children():
+#		if part.name == "JacketB":
+#			continue
+#		if part.name in sprite.sprite_state.keys():
+#			part.texture = load(sprite.sprite_state[part.name])
+#		else:
+#			continue
+#		var folder = get_palette_name_from_sprite(part)
+#		var number = sprite.palette_state[folder]
+#		set_sprite_color(part, number)
+###
 
 func load_sprite(sprite_holder: Node2D, state: Dictionary):
 	for part in sprite_holder.get_children():
 		if part.name == "JacketB":
-			continue
+			continue ## Why..??
 		if part.name in state.sprite_state.keys():
-			#if not part.name in state.sprite_state.keys():
-			var test = state.sprite_state[part.name]
-
-			if test:
-				part.texture = load(test)
+			var sprite = state.sprite_state[part.name]
+			if sprite:
+				part.texture = load(sprite)
 		else:
 			continue
-		var folder = get_palette_folder_name_from_sprite(part)
-		var number = state.palette_state[folder]
-		set_sprite_color(folder, part, number)
+			
+		var palette_name = get_palette_name_from_sprite(part)
+		var palette = load("res://Assets/Palettes/"+palette_name+"/palette.png")
+		var rows = palette.get_height()
+		var number = state.palette_state[palette_name]
+		set_sprite_color(part, palette, number, rows)
 
-func get_palette_folder_name_from_sprite(sprite: Sprite):
+func get_palette_name_from_sprite(sprite: Sprite):
 	var reverse_palette_dictionary = {
 		'AccessoryA': 'AccessoryA',
 		'AccessoryB': 'AccessoryB',
@@ -112,16 +116,10 @@ func get_palette_folder_name_from_sprite(sprite: Sprite):
 	}
 	return reverse_palette_dictionary[sprite.name]
 
-func set_sprite_color(folder, sprite: Sprite, number: String) -> void:
-	var palette_path = "res://Assets/Palettes/{folder}/{folder}color_{number}.png".format({
-		"folder": folder,
-		"number": number
-	})
-	var gray_palette_path = "res://Assets/Palettes/{folder}/{folder}color_000.png".format({
-		"folder": folder
-	})
-	sprite.material.set_shader_param("palette_swap", load(palette_path))
-	sprite.material.set_shader_param("greyscale_palette", load(gray_palette_path))
+func set_sprite_color(sprite: Sprite, palette: StreamTexture, number: int, rows: int) -> void:
+	sprite.material.set_shader_param("palette", palette)
+	sprite.material.set_shader_param("color_row", number)
+	sprite.material.set_shader_param("total_rows", rows)
 	make_shaders_unique(sprite)
 
 func make_shaders_unique(sprite: Sprite):

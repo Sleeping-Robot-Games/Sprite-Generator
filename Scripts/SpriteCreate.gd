@@ -1,5 +1,7 @@
 extends Node2D
 
+var rng = RandomNumberGenerator.new()
+
 onready var player_sprite: Dictionary = {
 	'AccessoryA': $PlayerSprites/SpriteHolder/AccessoryA,
 	'AccessoryB': $PlayerSprites/SpriteHolder/AccessoryB,
@@ -53,7 +55,7 @@ onready var palette_sprite_dict: Dictionary = {
 
 onready var sprite_generator = get_parent().get_node("Generator")
 
-var pallete_sprite_state: Dictionary
+var palette_sprite_state: Dictionary
 var sprite_state: Dictionary = {
 	'AccessoryA': '',
 	'AccessoryB': '',
@@ -97,7 +99,7 @@ func load_character_from_save():
 	pass
 
 func update_sheet_preview():
-	var state = {'sprite_state': sprite_state, 'palette_state': pallete_sprite_state}
+	var state = {'sprite_state': sprite_state, 'palette_state': palette_sprite_state}
 	sprite_generator.create_spritesheet(state, $Preview)
 
 func set_sprite_texture(sprite_name: String, texture_path: String) -> void:
@@ -116,15 +118,19 @@ func random_asset(folder: String, keyword: String = "") -> String:
 	randomize()
 	var random_index = randi() % len(files)
 	return folder+"/"+files[random_index]
+
+func random_color(color_rows: int) -> int:
+	randomize()
+	return rng.randi_range(1, color_rows)
 	
 func set_random_color(palette_type: String) -> void:
-	var random_color = random_asset(palette_folder_path+"/"+palette_type)
-	if random_color == "" or "000" in random_color:
-		random_color = random_color.replace("000", "001")
+	var palette = load(palette_folder_path+"/"+palette_type+"/palette.png")
+	var color_rows = palette.get_height()
+	var random_color = random_color(color_rows)
+	
 	for sprite in palette_sprite_dict[palette_type]:
-		var color_num = random_color.substr(len(random_color)-7, 3)
-		g.set_sprite_color(palette_type, sprite, color_num)
-		pallete_sprite_state[palette_type] = color_num
+		g.set_sprite_color(sprite, palette, random_color, color_rows)
+		palette_sprite_state[palette_type] = random_color
 		
 func set_random_texture(sprite_name: String) -> void:
 	var random_sprite = random_asset(sprite_folder_path + sprite_name)
@@ -193,17 +199,17 @@ func _on_Sprite_Selection_button_up(direction: int, sprite: String):
 	update_sheet_preview()
 
 func _on_Color_Selection_button_up(direction: int, palette_sprite: String):
-	var folder_path = "res://Assets/Palettes/"+palette_sprite
-	var files = g.files_in_dir(folder_path)
-	var new_color = int(pallete_sprite_state[palette_sprite]) + direction
-	if new_color == 0 and direction == -1:
-		new_color = len(files) - 1
-	if new_color == len(files) and direction == 1:
+	var palette = load("res://Assets/Palettes/"+palette_sprite+"/palette.png")
+	var color_rows = palette.get_height()
+	var new_color = int(palette_sprite_state[palette_sprite]) + direction
+	if new_color < 1:
+		new_color = color_rows - 1  
+	elif new_color >= color_rows:
 		new_color = 1
 	for sprite in palette_sprite_dict[palette_sprite]:
-		var color_num = str(new_color).pad_zeros(3)
-		g.set_sprite_color(palette_sprite, sprite, color_num)
-		pallete_sprite_state[palette_sprite] = color_num
+		var color_num = new_color
+		g.set_sprite_color(sprite, palette, color_num, color_rows)
+		palette_sprite_state[palette_sprite] = color_num
 		
 	update_sheet_preview()
 
@@ -217,7 +223,7 @@ func _on_Save_button_up():
 		$TabContainer/Character/NameLabel/Error.text = "Name is Taken"
 		$TabContainer/Character/NameLabel/Error.show()
 	else:
-		g.save_sprite(sprite_state, pallete_sprite_state, player_name)
+		g.save_sprite(sprite_state, palette_sprite_state, player_name)
 		hide()
 		get_node('../Main').show()
 
@@ -236,6 +242,6 @@ func _on_Random_Tab_button_up(sprites, palettes):
 		set_random_color(str(palette))
 
 func _on_Export_button_up():
-	var state = {'sprite_state': sprite_state, 'palette_state': pallete_sprite_state}
+	var state = {'sprite_state': sprite_state, 'palette_state': palette_sprite_state}
 	sprite_generator.create_spritesheet(state)
 	sprite_generator.export_spritesheet()
