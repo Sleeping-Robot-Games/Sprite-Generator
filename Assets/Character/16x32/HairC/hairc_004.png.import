@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/topb_000.png-c9c5c730dec722035c5a886db5c00596.stex"
+path="res://.import/hairc_004.png-29f34109ada0632c963a5c7b01c4e57b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Character/16x32/TopB/topb_000.png"
-dest_files=[ "res://.import/topb_000.png-c9c5c730dec722035c5a886db5c00596.stex" ]
+source_file="res://Assets/Character/16x32/HairC/hairc_004.png"
+dest_files=[ "res://.import/hairc_004.png-29f34109ada0632c963a5c7b01c4e57b.stex" ]
 
 [params]
 
