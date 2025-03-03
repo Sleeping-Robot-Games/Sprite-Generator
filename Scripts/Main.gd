@@ -18,9 +18,8 @@ func _on_List_button_up():
 func _on_WindowChange_pressed():
 	if not OS.window_fullscreen:
 		OS.window_fullscreen = true
-		$WindowChange.text = 'Windowed'
+		$WindowLabel.text = 'Windowed'
 	else:
 		OS.window_fullscreen = false
 		OS.window_resizable = true
-		$WindowChange.text = 'Full Screen'
-		
+		$WindowLabel.text = 'Full Screen'
