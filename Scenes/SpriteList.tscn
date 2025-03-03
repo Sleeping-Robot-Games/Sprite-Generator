@@ -1,9 +1,17 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/SpriteList.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Ui/Bg_003.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Ui/taskbar.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Ui/uitheme.tres" type="Theme" id=4]
 
 [node name="SpriteList" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="BG" type="Sprite" parent="."]
+position = Vector2( 388, 235 )
+scale = Vector2( 1.8102, 1.8102 )
+texture = ExtResource( 2 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 margin_left = 76.0
@@ -11,9 +19,6 @@ margin_top = 65.0
 margin_right = 576.0
 margin_bottom = 365.0
 scroll_horizontal_enabled = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 margin_right = 500.0
@@ -25,21 +30,29 @@ margin_left = 272.0
 margin_top = 415.0
 margin_right = 370.0
 margin_bottom = 447.0
+theme = ExtResource( 4 )
 text = "Back"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label" type="Label" parent="."]
 margin_left = 234.0
 margin_top = 10.0
 margin_right = 406.0
 margin_bottom = 37.0
-text = "Spirte List"
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Sprite List"
 align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="taskbar" type="NinePatchRect" parent="Label"]
+margin_left = -234.0
+margin_top = 502.0
+margin_right = 726.0
+margin_bottom = 530.0
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 9, 9 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
 
 [connection signal="visibility_changed" from="." to="." method="_on_SpriteList_visibility_changed"]
 [connection signal="button_up" from="Button" to="." method="_on_Button_button_up"]

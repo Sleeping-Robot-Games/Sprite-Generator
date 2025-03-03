@@ -1,36 +1,184 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Ui/palettehover.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Ui/folderhover.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Ui/folder.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Ui/folderpressed.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Ui/Bg_002.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Ui/folderfocus.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Ui/taskbar.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Ui/magnifying.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Ui/magnifyinghover.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Ui/magnifyingpressed.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Ui/magnifyingfocus.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Ui/palette.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Ui/palettefocus.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Ui/palettepressed.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Ui/logotemp.png" type="Texture" id=16]
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 32, 16 )
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 32, 16 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 32, 16 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 32, 16 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 16, 16 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ 58.0 ]
+}
+
+[node name="BG" type="Sprite" parent="."]
+position = Vector2( 472, 345 )
+scale = Vector2( 1.6125, 1.6125 )
+texture = ExtResource( 6 )
+
+[node name="Logoshadow" type="Sprite" parent="."]
+modulate = Color( 0.168627, 0.0666667, 0.129412, 0.478431 )
+position = Vector2( 506, 154 )
+scale = Vector2( 4.8375, 4.8375 )
+texture = ExtResource( 16 )
+
+[node name="Logotemp" type="Sprite" parent="."]
+position = Vector2( 490, 135 )
+scale = Vector2( 4.8375, 4.8375 )
+texture = ExtResource( 16 )
+
+[node name="Createshadow" type="Sprite" parent="."]
+self_modulate = Color( 0.239216, 0.101961, 0.227451, 0.572549 )
+position = Vector2( 95, 138 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 13 )
 
 [node name="Create" type="Button" parent="."]
-margin_left = 258.0
-margin_top = 198.0
-margin_right = 352.0
-margin_bottom = 239.0
+margin_left = 65.0
+margin_top = 109.0
+margin_right = 81.0
+margin_bottom = 125.0
+rect_scale = Vector2( 3, 3 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
+
+[node name="Create Sprite" type="Label" parent="."]
+margin_left = 58.0
+margin_top = 166.0
+margin_right = 140.0
+margin_bottom = 180.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.196078 )
+custom_constants/shadow_offset_y = 5
 text = "Create Sprite"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="ListShadow" type="Sprite" parent="."]
+self_modulate = Color( 0.2, 0.0431373, 0.203922, 0.560784 )
+position = Vector2( 69.3894, 226.996 )
+scale = Vector2( 3.14934, 2.6255 )
+texture = ExtResource( 4 )
 
 [node name="List" type="Button" parent="."]
-margin_left = 259.0
-margin_top = 274.0
-margin_right = 357.0
-margin_bottom = 316.0
+margin_left = 16.0
+margin_top = 196.0
+margin_right = 48.0
+margin_bottom = 212.0
+rect_scale = Vector2( 3, 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+
+[node name="Spritelist" type="Label" parent="."]
+margin_left = 59.0
+margin_top = 250.0
+margin_right = 123.0
+margin_bottom = 264.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.196078 )
+custom_constants/shadow_offset_y = 5
 text = "Sprite List"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="taskbar" type="NinePatchRect" parent="."]
+margin_top = 512.0
+margin_right = 960.0
+margin_bottom = 540.0
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 9, 9 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="WindowChangeShadow" type="Sprite" parent="."]
+self_modulate = Color( 0.192157, 0.0666667, 0.141176, 0.631373 )
+position = Vector2( 90, 310 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 9 )
 
 [node name="WindowChange" type="Button" parent="."]
-margin_left = 27.0
-margin_top = 482.0
-margin_right = 115.0
-margin_bottom = 512.0
-text = "Full Screen"
+margin_left = 67.0
+margin_top = 281.0
+margin_right = 83.0
+margin_bottom = 297.0
+rect_scale = Vector2( 3, 3 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+icon = ExtResource( 9 )
+
+[node name="Fullscreen" type="Label" parent="."]
+margin_left = 60.0
+margin_top = 328.0
+margin_right = 126.0
+margin_bottom = 342.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.196078 )
+custom_constants/shadow_offset_y = 5
+text = "Fullscreen"
 
 [connection signal="button_up" from="Create" to="." method="_on_Create_button_up"]
 [connection signal="button_up" from="List" to="." method="_on_List_button_up"]
