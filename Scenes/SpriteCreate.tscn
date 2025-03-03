@@ -338,9 +338,6 @@ margin_top = -1.60879
 margin_right = -24.4071
 margin_bottom = 18.3912
 text = "Left"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Right" type="Button" parent="TabContainer/Head/HairALabel"]
 margin_left = 70.0
@@ -916,7 +913,7 @@ texture_hover = ExtResource( 20 )
 
 [node name="Save" type="Button" parent="."]
 margin_left = 206.0
-margin_top = 513.0
+margin_top = 512.0
 margin_right = 254.0
 margin_bottom = 539.0
 theme = ExtResource( 30 )
@@ -927,7 +924,7 @@ text = "Save"
 
 [node name="Export" type="Button" parent="."]
 margin_left = 259.0
-margin_top = 513.0
+margin_top = 512.0
 margin_right = 356.0
 margin_bottom = 539.0
 theme = ExtResource( 30 )
@@ -938,7 +935,7 @@ text = "Quick Export"
 
 [node name="Back" type="Button" parent="."]
 margin_left = 150.0
-margin_top = 513.0
+margin_top = 512.0
 margin_right = 201.0
 margin_bottom = 539.0
 theme = ExtResource( 30 )

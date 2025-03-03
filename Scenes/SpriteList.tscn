@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/SpriteList.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Ui/Bg_003.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Ui/taskbar.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Ui/uitheme.tres" type="Theme" id=4]
+[ext_resource path="res://Assets/Ui/font.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Assets/Ui/sound.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Ui/wifi.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Ui/battery.png" type="Texture" id=7]
+[ext_resource path="res://taskbar.tres" type="Theme" id=8]
 
 [node name="SpriteList" type="Node2D"]
 script = ExtResource( 1 )
@@ -28,20 +29,13 @@ margin_right = 500.0
 margin_bottom = 300.0
 rect_min_size = Vector2( 500, 300 )
 
-[node name="Button" type="Button" parent="."]
-margin_left = 272.0
-margin_top = 415.0
-margin_right = 370.0
-margin_bottom = 447.0
-theme = ExtResource( 4 )
-text = "Back"
-
 [node name="Label" type="Label" parent="."]
 margin_left = 234.0
 margin_top = 10.0
 margin_right = 406.0
 margin_bottom = 37.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
 text = "Sprite List"
 align = 1
 
@@ -57,6 +51,17 @@ patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 3
 
+[node name="Button" type="Button" parent="Label"]
+margin_left = -78.0
+margin_top = 502.0
+margin_right = -28.0
+margin_bottom = 529.0
+theme = ExtResource( 8 )
+custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "Back"
+
 [node name="battery" type="Sprite" parent="."]
 position = Vector2( 921, 527 )
 texture = ExtResource( 7 )
@@ -70,4 +75,4 @@ position = Vector2( 885, 525 )
 texture = ExtResource( 6 )
 
 [connection signal="visibility_changed" from="." to="." method="_on_SpriteList_visibility_changed"]
-[connection signal="button_up" from="Button" to="." method="_on_Button_button_up"]
+[connection signal="button_up" from="Label/Button" to="." method="_on_Button_button_up"]
