@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scripts/SpriteCreate.gd" type="Script" id=1]
 [ext_resource path="res://Resources/ButtonGroups/genderButtonGroup.tres" type="ButtonGroup" id=2]
@@ -15,17 +15,14 @@
 [ext_resource path="res://Assets/Ui/tilemap.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Ui/leftturnhover.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Ui/leftturnpressed.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Ui/rightturnfocus.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Ui/rightturnpressed.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Ui/rightturnhover.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Ui/rightturn.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Ui/leftturn.png" type="Texture" id=22]
-[ext_resource path="res://Assets/Ui/leftturnfocus.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Ui/dicehover.png" type="Texture" id=24]
 [ext_resource path="res://Assets/Ui/diceallhover.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Ui/diceallpressed.png" type="Texture" id=26]
 [ext_resource path="res://Assets/Ui/dicealldisabled.png" type="Texture" id=27]
-[ext_resource path="res://Assets/Ui/diceallfocus.png" type="Texture" id=28]
 [ext_resource path="res://Assets/Ui/diceallnormal.png" type="Texture" id=29]
 [ext_resource path="res://taskbar.tres" type="Theme" id=30]
 
@@ -1214,7 +1211,6 @@ texture_normal = ExtResource( 29 )
 texture_pressed = ExtResource( 26 )
 texture_hover = ExtResource( 25 )
 texture_disabled = ExtResource( 27 )
-texture_focused = ExtResource( 28 )
 
 [node name="TurnLeft" type="TextureButton" parent="."]
 margin_left = 416.304
@@ -1226,7 +1222,6 @@ rect_pivot_offset = Vector2( 165.652, -35.306 )
 texture_normal = ExtResource( 22 )
 texture_pressed = ExtResource( 17 )
 texture_hover = ExtResource( 16 )
-texture_focused = ExtResource( 23 )
 
 [node name="TurnRight" type="TextureButton" parent="."]
 margin_left = 288.0
@@ -1238,28 +1233,24 @@ rect_pivot_offset = Vector2( 73.461, -34.762 )
 texture_normal = ExtResource( 21 )
 texture_pressed = ExtResource( 19 )
 texture_hover = ExtResource( 20 )
-texture_focused = ExtResource( 18 )
 
 [node name="Save" type="Button" parent="."]
-margin_left = 216.0
+margin_left = 206.0
 margin_top = 513.0
-margin_right = 264.0
+margin_right = 254.0
 margin_bottom = 539.0
 theme = ExtResource( 30 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Save"
 
 [node name="Export" type="Button" parent="."]
-margin_left = 278.0
+margin_left = 259.0
 margin_top = 513.0
-margin_right = 375.0
+margin_right = 356.0
 margin_bottom = 539.0
 theme = ExtResource( 30 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Quick Export"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Back" type="Button" parent="."]
 margin_left = 150.0
