@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scripts/SpriteCreate.gd" type="Script" id=1]
 [ext_resource path="res://Resources/ButtonGroups/genderButtonGroup.tres" type="ButtonGroup" id=2]
@@ -7,14 +7,17 @@
 [ext_resource path="res://Scenes/PlayerSprites.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Ui/uitheme.tres" type="Theme" id=6]
 [ext_resource path="res://Assets/Ui/Bg_001.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Ui/sound.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Ui/dicepressed.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Ui/dicenormal.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Ui/dicefocus.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Ui/dicedisabled.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Ui/taskbar.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Ui/wifi.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Ui/tilemap.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Ui/leftturnhover.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Ui/leftturnpressed.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Ui/battery.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Ui/rightturnpressed.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Ui/rightturnhover.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Ui/rightturn.png" type="Texture" id=21]
@@ -439,6 +442,18 @@ patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 3
 
+[node name="battery" type="Sprite" parent="."]
+position = Vector2( 921, 527 )
+texture = ExtResource( 18 )
+
+[node name="sound" type="Sprite" parent="."]
+position = Vector2( 903, 527 )
+texture = ExtResource( 8 )
+
+[node name="wifi" type="Sprite" parent="."]
+position = Vector2( 885, 525 )
+texture = ExtResource( 14 )
+
 [node name="TabContainer" type="TabContainer" parent="."]
 margin_left = 231.0
 margin_top = 104.0
@@ -449,6 +464,7 @@ theme = ExtResource( 6 )
 tab_align = 0
 
 [node name="Character" type="Tabs" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 3.0
@@ -542,7 +558,6 @@ texture_hover = ExtResource( 24 )
 texture_disabled = ExtResource( 12 )
 
 [node name="Head" type="Tabs" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -810,10 +825,10 @@ margin_bottom = 16.7854
 text = "Right"
 
 [node name="HeadTabRandom" type="TextureButton" parent="TabContainer/Head"]
-margin_left = 290.206
-margin_top = 249.094
-margin_right = 306.206
-margin_bottom = 265.094
+margin_left = 295.0
+margin_top = 216.0
+margin_right = 311.0
+margin_bottom = 232.0
 rect_scale = Vector2( 3, 3 )
 texture_normal = ExtResource( 10 )
 texture_pressed = ExtResource( 9 )
@@ -1025,10 +1040,10 @@ margin_bottom = 16.5599
 text = "Right"
 
 [node name="TopTabRandom" type="TextureButton" parent="TabContainer/Top"]
-margin_left = 277.785
-margin_top = 241.587
-margin_right = 293.785
-margin_bottom = 257.587
+margin_left = 295.0
+margin_top = 216.0
+margin_right = 311.0
+margin_bottom = 232.0
 rect_scale = Vector2( 3, 3 )
 texture_normal = ExtResource( 10 )
 texture_pressed = ExtResource( 9 )
@@ -1186,10 +1201,10 @@ margin_bottom = 16.4053
 text = "Right"
 
 [node name="BottomTabRandom" type="TextureButton" parent="TabContainer/Bottom"]
-margin_left = 282.258
-margin_top = 240.367
-margin_right = 298.258
-margin_bottom = 256.367
+margin_left = 295.0
+margin_top = 216.0
+margin_right = 311.0
+margin_bottom = 232.0
 rect_scale = Vector2( 3, 3 )
 texture_normal = ExtResource( 10 )
 texture_pressed = ExtResource( 9 )
@@ -1240,6 +1255,7 @@ margin_top = 513.0
 margin_right = 254.0
 margin_bottom = 539.0
 theme = ExtResource( 30 )
+custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Save"
 
@@ -1249,6 +1265,7 @@ margin_top = 513.0
 margin_right = 356.0
 margin_bottom = 539.0
 theme = ExtResource( 30 )
+custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Quick Export"
 
@@ -1258,6 +1275,7 @@ margin_top = 513.0
 margin_right = 201.0
 margin_bottom = 539.0
 theme = ExtResource( 30 )
+custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Back"
 

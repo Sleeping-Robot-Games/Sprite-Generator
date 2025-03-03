@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Ui/palettehover.png" type="Texture" id=2]
@@ -6,11 +6,14 @@
 [ext_resource path="res://Assets/Ui/folder.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Ui/folderpressed.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Ui/Bg_002.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Ui/battery.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Ui/taskbar.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Ui/magnifying.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Ui/magnifyinghover.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Ui/magnifyingpressed.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Ui/sound.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Ui/palette.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Ui/wifi.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Ui/palettepressed.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Ui/logotemp.png" type="Texture" id=16]
 
@@ -148,6 +151,18 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 0.196078 )
 custom_constants/shadow_offset_y = 5
 text = "Fullscreen"
+
+[node name="battery" type="Sprite" parent="."]
+position = Vector2( 921, 527 )
+texture = ExtResource( 7 )
+
+[node name="sound" type="Sprite" parent="."]
+position = Vector2( 903, 527 )
+texture = ExtResource( 12 )
+
+[node name="wifi" type="Sprite" parent="."]
+position = Vector2( 885, 525 )
+texture = ExtResource( 14 )
 
 [connection signal="button_up" from="Create" to="." method="_on_Create_button_up"]
 [connection signal="button_up" from="List" to="." method="_on_List_button_up"]
