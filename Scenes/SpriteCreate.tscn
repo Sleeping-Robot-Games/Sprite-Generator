@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Scripts/SpriteCreate.gd" type="Script" id=1]
 [ext_resource path="res://Resources/ButtonGroups/genderButtonGroup.tres" type="ButtonGroup" id=2]
@@ -14,7 +14,7 @@
 [ext_resource path="res://Assets/Ui/dicedisabled.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Ui/taskbar.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Ui/wifi.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Ui/tilemap.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Ui/tileset.tres" type="TileSet" id=15]
 [ext_resource path="res://Assets/Ui/leftturnhover.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Ui/leftturnpressed.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Ui/battery.png" type="Texture" id=18]
@@ -22,392 +22,43 @@
 [ext_resource path="res://Assets/Ui/rightturnhover.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Ui/rightturn.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Ui/leftturn.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Ui/rightarrow.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Ui/dicehover.png" type="Texture" id=24]
 [ext_resource path="res://Assets/Ui/diceallhover.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Ui/diceallpressed.png" type="Texture" id=26]
 [ext_resource path="res://Assets/Ui/dicealldisabled.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Ui/leftarrow.png" type="Texture" id=28]
 [ext_resource path="res://Assets/Ui/diceallnormal.png" type="Texture" id=29]
 [ext_resource path="res://taskbar.tres" type="Theme" id=30]
+[ext_resource path="res://Assets/Ui/font.tres" type="DynamicFont" id=31]
+[ext_resource path="res://Assets/Ui/rightarrowhover.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Ui/rightarrowpressed.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Ui/leftarrowpressed.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Ui/leftarrowhover.png" type="Texture" id=35]
 
-[sub_resource type="TileSet" id=1]
-0/name = "tilemap.png 0"
-0/texture = ExtResource( 15 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 16, 16 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape_one_way = false
-0/shape_one_way_margin = 0.0
-0/shapes = [  ]
-0/z_index = 0
-1/name = "tilemap.png 1"
-1/texture = ExtResource( 15 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 16, 0, 16, 16 )
-1/tile_mode = 0
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shape_offset = Vector2( 0, 0 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape_one_way = false
-1/shape_one_way_margin = 0.0
-1/shapes = [  ]
-1/z_index = 0
-2/name = "tilemap.png 2"
-2/texture = ExtResource( 15 )
-2/tex_offset = Vector2( 0, 0 )
-2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 32, 0, 16, 16 )
-2/tile_mode = 0
-2/occluder_offset = Vector2( 0, 0 )
-2/navigation_offset = Vector2( 0, 0 )
-2/shape_offset = Vector2( 0, 0 )
-2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape_one_way = false
-2/shape_one_way_margin = 0.0
-2/shapes = [  ]
-2/z_index = 0
-3/name = "tilemap.png 3"
-3/texture = ExtResource( 15 )
-3/tex_offset = Vector2( 0, 0 )
-3/modulate = Color( 1, 1, 1, 1 )
-3/region = Rect2( 0, 16, 16, 16 )
-3/tile_mode = 0
-3/occluder_offset = Vector2( 0, 0 )
-3/navigation_offset = Vector2( 0, 0 )
-3/shape_offset = Vector2( 0, 0 )
-3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-3/shape_one_way = false
-3/shape_one_way_margin = 0.0
-3/shapes = [  ]
-3/z_index = 0
-4/name = "tilemap.png 4"
-4/texture = ExtResource( 15 )
-4/tex_offset = Vector2( 0, 0 )
-4/modulate = Color( 1, 1, 1, 1 )
-4/region = Rect2( 32, 16, 16, 16 )
-4/tile_mode = 0
-4/occluder_offset = Vector2( 0, 0 )
-4/navigation_offset = Vector2( 0, 0 )
-4/shape_offset = Vector2( 0, 0 )
-4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-4/shape_one_way = false
-4/shape_one_way_margin = 0.0
-4/shapes = [  ]
-4/z_index = 0
-5/name = "tilemap.png 5"
-5/texture = ExtResource( 15 )
-5/tex_offset = Vector2( 0, 0 )
-5/modulate = Color( 1, 1, 1, 1 )
-5/region = Rect2( 0, 32, 16, 16 )
-5/tile_mode = 0
-5/occluder_offset = Vector2( 0, 0 )
-5/navigation_offset = Vector2( 0, 0 )
-5/shape_offset = Vector2( 0, 0 )
-5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-5/shape_one_way = false
-5/shape_one_way_margin = 0.0
-5/shapes = [  ]
-5/z_index = 0
-6/name = "tilemap.png 6"
-6/texture = ExtResource( 15 )
-6/tex_offset = Vector2( 0, 0 )
-6/modulate = Color( 1, 1, 1, 1 )
-6/region = Rect2( 16, 32, 16, 16 )
-6/tile_mode = 0
-6/occluder_offset = Vector2( 0, 0 )
-6/navigation_offset = Vector2( 0, 0 )
-6/shape_offset = Vector2( 0, 0 )
-6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-6/shape_one_way = false
-6/shape_one_way_margin = 0.0
-6/shapes = [  ]
-6/z_index = 0
-7/name = "tilemap.png 7"
-7/texture = ExtResource( 15 )
-7/tex_offset = Vector2( 0, 0 )
-7/modulate = Color( 1, 1, 1, 1 )
-7/region = Rect2( 32, 32, 16, 16 )
-7/tile_mode = 0
-7/occluder_offset = Vector2( 0, 0 )
-7/navigation_offset = Vector2( 0, 0 )
-7/shape_offset = Vector2( 0, 0 )
-7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-7/shape_one_way = false
-7/shape_one_way_margin = 0.0
-7/shapes = [  ]
-7/z_index = 0
-8/name = "tilemap.png 8"
-8/texture = ExtResource( 15 )
-8/tex_offset = Vector2( 0, 0 )
-8/modulate = Color( 1, 1, 1, 1 )
-8/region = Rect2( 48, 0, 16, 16 )
-8/tile_mode = 0
-8/occluder_offset = Vector2( 0, 0 )
-8/navigation_offset = Vector2( 0, 0 )
-8/shape_offset = Vector2( 0, 0 )
-8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-8/shape_one_way = false
-8/shape_one_way_margin = 0.0
-8/shapes = [  ]
-8/z_index = 0
-9/name = "tilemap.png 9"
-9/texture = ExtResource( 15 )
-9/tex_offset = Vector2( 0, 0 )
-9/modulate = Color( 1, 1, 1, 1 )
-9/region = Rect2( 64, 0, 16, 16 )
-9/tile_mode = 0
-9/occluder_offset = Vector2( 0, 0 )
-9/navigation_offset = Vector2( 0, 0 )
-9/shape_offset = Vector2( 0, 0 )
-9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-9/shape_one_way = false
-9/shape_one_way_margin = 0.0
-9/shapes = [  ]
-9/z_index = 0
-10/name = "tilemap.png 10"
-10/texture = ExtResource( 15 )
-10/tex_offset = Vector2( 0, 0 )
-10/modulate = Color( 1, 1, 1, 1 )
-10/region = Rect2( 80, 0, 16, 16 )
-10/tile_mode = 0
-10/occluder_offset = Vector2( 0, 0 )
-10/navigation_offset = Vector2( 0, 0 )
-10/shape_offset = Vector2( 0, 0 )
-10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-10/shape_one_way = false
-10/shape_one_way_margin = 0.0
-10/shapes = [  ]
-10/z_index = 0
-11/name = "tilemap.png 11"
-11/texture = ExtResource( 15 )
-11/tex_offset = Vector2( 0, 0 )
-11/modulate = Color( 1, 1, 1, 1 )
-11/region = Rect2( 48, 16, 16, 16 )
-11/tile_mode = 0
-11/occluder_offset = Vector2( 0, 0 )
-11/navigation_offset = Vector2( 0, 0 )
-11/shape_offset = Vector2( 0, 0 )
-11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-11/shape_one_way = false
-11/shape_one_way_margin = 0.0
-11/shapes = [  ]
-11/z_index = 0
-12/name = "tilemap.png 12"
-12/texture = ExtResource( 15 )
-12/tex_offset = Vector2( 0, 0 )
-12/modulate = Color( 1, 1, 1, 1 )
-12/region = Rect2( 64, 16, 16, 16 )
-12/tile_mode = 0
-12/occluder_offset = Vector2( 0, 0 )
-12/navigation_offset = Vector2( 0, 0 )
-12/shape_offset = Vector2( 0, 0 )
-12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-12/shape_one_way = false
-12/shape_one_way_margin = 0.0
-12/shapes = [  ]
-12/z_index = 0
-13/name = "tilemap.png 13"
-13/texture = ExtResource( 15 )
-13/tex_offset = Vector2( 0, 0 )
-13/modulate = Color( 1, 1, 1, 1 )
-13/region = Rect2( 80, 16, 16, 16 )
-13/tile_mode = 0
-13/occluder_offset = Vector2( 0, 0 )
-13/navigation_offset = Vector2( 0, 0 )
-13/shape_offset = Vector2( 0, 0 )
-13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-13/shape_one_way = false
-13/shape_one_way_margin = 0.0
-13/shapes = [  ]
-13/z_index = 0
-14/name = "tilemap.png 14"
-14/texture = ExtResource( 15 )
-14/tex_offset = Vector2( 0, 0 )
-14/modulate = Color( 1, 1, 1, 1 )
-14/region = Rect2( 48, 32, 16, 16 )
-14/tile_mode = 0
-14/occluder_offset = Vector2( 0, 0 )
-14/navigation_offset = Vector2( 0, 0 )
-14/shape_offset = Vector2( 0, 0 )
-14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-14/shape_one_way = false
-14/shape_one_way_margin = 0.0
-14/shapes = [  ]
-14/z_index = 0
-15/name = "tilemap.png 15"
-15/texture = ExtResource( 15 )
-15/tex_offset = Vector2( 0, 0 )
-15/modulate = Color( 1, 1, 1, 1 )
-15/region = Rect2( 64, 32, 16, 16 )
-15/tile_mode = 0
-15/occluder_offset = Vector2( 0, 0 )
-15/navigation_offset = Vector2( 0, 0 )
-15/shape_offset = Vector2( 0, 0 )
-15/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-15/shape_one_way = false
-15/shape_one_way_margin = 0.0
-15/shapes = [  ]
-15/z_index = 0
-16/name = "tilemap.png 16"
-16/texture = ExtResource( 15 )
-16/tex_offset = Vector2( 0, 0 )
-16/modulate = Color( 1, 1, 1, 1 )
-16/region = Rect2( 80, 32, 16, 16 )
-16/tile_mode = 0
-16/occluder_offset = Vector2( 0, 0 )
-16/navigation_offset = Vector2( 0, 0 )
-16/shape_offset = Vector2( 0, 0 )
-16/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-16/shape_one_way = false
-16/shape_one_way_margin = 0.0
-16/shapes = [  ]
-16/z_index = 0
-17/name = "tilemap.png 17"
-17/texture = ExtResource( 15 )
-17/tex_offset = Vector2( 0, 0 )
-17/modulate = Color( 1, 1, 1, 1 )
-17/region = Rect2( 0, 48, 16, 16 )
-17/tile_mode = 0
-17/occluder_offset = Vector2( 0, 0 )
-17/navigation_offset = Vector2( 0, 0 )
-17/shape_offset = Vector2( 0, 0 )
-17/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-17/shape_one_way = false
-17/shape_one_way_margin = 0.0
-17/shapes = [  ]
-17/z_index = 0
-18/name = "tilemap.png 18"
-18/texture = ExtResource( 15 )
-18/tex_offset = Vector2( 0, 0 )
-18/modulate = Color( 1, 1, 1, 1 )
-18/region = Rect2( 16, 48, 16, 16 )
-18/tile_mode = 0
-18/occluder_offset = Vector2( 0, 0 )
-18/navigation_offset = Vector2( 0, 0 )
-18/shape_offset = Vector2( 0, 0 )
-18/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-18/shape_one_way = false
-18/shape_one_way_margin = 0.0
-18/shapes = [  ]
-18/z_index = 0
-19/name = "tilemap.png 19"
-19/texture = ExtResource( 15 )
-19/tex_offset = Vector2( 0, 0 )
-19/modulate = Color( 1, 1, 1, 1 )
-19/region = Rect2( 32, 48, 16, 16 )
-19/tile_mode = 0
-19/occluder_offset = Vector2( 0, 0 )
-19/navigation_offset = Vector2( 0, 0 )
-19/shape_offset = Vector2( 0, 0 )
-19/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-19/shape_one_way = false
-19/shape_one_way_margin = 0.0
-19/shapes = [  ]
-19/z_index = 0
-20/name = "tilemap.png 20"
-20/texture = ExtResource( 15 )
-20/tex_offset = Vector2( 0, 0 )
-20/modulate = Color( 1, 1, 1, 1 )
-20/region = Rect2( 0, 64, 16, 16 )
-20/tile_mode = 0
-20/occluder_offset = Vector2( 0, 0 )
-20/navigation_offset = Vector2( 0, 0 )
-20/shape_offset = Vector2( 0, 0 )
-20/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-20/shape_one_way = false
-20/shape_one_way_margin = 0.0
-20/shapes = [  ]
-20/z_index = 0
-21/name = "tilemap.png 21"
-21/texture = ExtResource( 15 )
-21/tex_offset = Vector2( 0, 0 )
-21/modulate = Color( 1, 1, 1, 1 )
-21/region = Rect2( 16, 64, 16, 16 )
-21/tile_mode = 0
-21/occluder_offset = Vector2( 0, 0 )
-21/navigation_offset = Vector2( 0, 0 )
-21/shape_offset = Vector2( 0, 0 )
-21/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-21/shape_one_way = false
-21/shape_one_way_margin = 0.0
-21/shapes = [  ]
-21/z_index = 0
-22/name = "tilemap.png 22"
-22/texture = ExtResource( 15 )
-22/tex_offset = Vector2( 0, 0 )
-22/modulate = Color( 1, 1, 1, 1 )
-22/region = Rect2( 32, 64, 16, 16 )
-22/tile_mode = 0
-22/occluder_offset = Vector2( 0, 0 )
-22/navigation_offset = Vector2( 0, 0 )
-22/shape_offset = Vector2( 0, 0 )
-22/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-22/shape_one_way = false
-22/shape_one_way_margin = 0.0
-22/shapes = [  ]
-22/z_index = 0
-23/name = "tilemap.png 23"
-23/texture = ExtResource( 15 )
-23/tex_offset = Vector2( 0, 0 )
-23/modulate = Color( 1, 1, 1, 1 )
-23/region = Rect2( 16, 80, 16, 16 )
-23/tile_mode = 0
-23/occluder_offset = Vector2( 0, 0 )
-23/navigation_offset = Vector2( 0, 0 )
-23/shape_offset = Vector2( 0, 0 )
-23/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-23/shape_one_way = false
-23/shape_one_way_margin = 0.0
-23/shapes = [  ]
-23/z_index = 0
-24/name = "tilemap.png 24"
-24/texture = ExtResource( 15 )
-24/tex_offset = Vector2( 0, 0 )
-24/modulate = Color( 1, 1, 1, 1 )
-24/region = Rect2( 32, 80, 16, 16 )
-24/tile_mode = 0
-24/occluder_offset = Vector2( 0, 0 )
-24/navigation_offset = Vector2( 0, 0 )
-24/shape_offset = Vector2( 0, 0 )
-24/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-24/shape_one_way = false
-24/shape_one_way_margin = 0.0
-24/shapes = [  ]
-24/z_index = 0
-25/name = "tilemap.png 25"
-25/texture = ExtResource( 15 )
-25/tex_offset = Vector2( 0, 0 )
-25/modulate = Color( 1, 1, 1, 1 )
-25/region = Rect2( 0, 80, 16, 16 )
-25/tile_mode = 0
-25/occluder_offset = Vector2( 0, 0 )
-25/navigation_offset = Vector2( 0, 0 )
-25/shape_offset = Vector2( 0, 0 )
-25/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-25/shape_one_way = false
-25/shape_one_way_margin = 0.0
-25/shapes = [  ]
-25/z_index = 0
-26/name = "tilemap.png 26"
-26/texture = ExtResource( 15 )
-26/tex_offset = Vector2( 0, 0 )
-26/modulate = Color( 1, 1, 1, 1 )
-26/region = Rect2( 16, 16, 16, 16 )
-26/tile_mode = 0
-26/occluder_offset = Vector2( 0, 0 )
-26/navigation_offset = Vector2( 0, 0 )
-26/shape_offset = Vector2( 0, 0 )
-26/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-26/shape_one_way = false
-26/shape_one_way_margin = 0.0
-26/shapes = [  ]
-26/z_index = 0
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 35 )
+region_rect = Rect2( 0, 0, 9, 9 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 34 )
+region_rect = Rect2( 0, 0, 9, 9 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 28 )
+region_rect = Rect2( 0, 0, 9, 9 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 32 )
+region_rect = Rect2( 0, 0, 9, 9 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 33 )
+region_rect = Rect2( 0, 0, 9, 9 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 23 )
+region_rect = Rect2( 0, 0, 9, 9 )
 
 [node name="SpriteCreate" type="Node2D"]
 script = ExtResource( 1 )
@@ -426,10 +77,17 @@ offset = Vector2( 599, 148 )
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( -404, 77 )
 scale = Vector2( 1.5, 1.5 )
-tile_set = SubResource( 1 )
+tile_set = ExtResource( 15 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -131030, 0, 0, -131029, 1, 0, -131028, 18, 0, -131027, 1, 0, -131026, 18, 0, -131025, 1, 0, -131024, 18, 0, -131023, 1, 0, -131022, 18, 0, -131021, 1, 0, -131020, 18, 0, -131019, 1, 0, -131018, 18, 0, -131017, 19, 0, -65494, 3, 0, -65493, 26, 0, -65492, 21, 0, -65491, 26, 0, -65490, 21, 0, -65489, 26, 0, -65488, 21, 0, -65487, 26, 0, -65486, 21, 0, -65485, 26, 0, -65484, 21, 0, -65483, 26, 0, -65482, 21, 0, -65481, 22, 0, 42, 20, 0, 43, 21, 0, 44, 26, 0, 45, 21, 0, 46, 26, 0, 47, 21, 0, 48, 26, 0, 49, 21, 0, 50, 26, 0, 51, 21, 0, 52, 26, 0, 53, 21, 0, 54, 26, 0, 55, 4, 0, 65555, 8, 0, 65556, 9, 0, 65557, 9, 0, 65558, 9, 0, 65559, 9, 0, 65560, 9, 0, 65561, 10, 0, 65578, 3, 0, 65579, 26, 0, 65580, 21, 0, 65581, 26, 0, 65582, 21, 0, 65583, 26, 0, 65584, 21, 0, 65585, 26, 0, 65586, 21, 0, 65587, 26, 0, 65588, 21, 0, 65589, 26, 0, 65590, 21, 0, 65591, 22, 0, 131091, 11, 0, 131092, 12, 0, 131093, 12, 0, 131094, 12, 0, 131095, 12, 0, 131096, 12, 0, 131097, 13, 0, 131114, 20, 0, 131115, 21, 0, 131116, 26, 0, 131117, 21, 0, 131118, 26, 0, 131119, 21, 0, 131120, 26, 0, 131121, 21, 0, 131122, 26, 0, 131123, 21, 0, 131124, 26, 0, 131125, 21, 0, 131126, 26, 0, 131127, 4, 0, 196627, 11, 0, 196628, 12, 0, 196629, 12, 0, 196630, 12, 0, 196631, 12, 0, 196632, 12, 0, 196633, 13, 0, 196650, 3, 0, 196651, 26, 0, 196652, 21, 0, 196653, 26, 0, 196654, 21, 0, 196655, 26, 0, 196656, 21, 0, 196657, 26, 0, 196658, 21, 0, 196659, 26, 0, 196660, 21, 0, 196661, 26, 0, 196662, 21, 0, 196663, 22, 0, 262163, 11, 0, 262164, 12, 0, 262165, 12, 0, 262167, 12, 0, 262168, 12, 0, 262169, 13, 0, 262186, 20, 0, 262187, 21, 0, 262188, 26, 0, 262189, 21, 0, 262190, 26, 0, 262191, 21, 0, 262192, 26, 0, 262193, 21, 0, 262194, 26, 0, 262195, 21, 0, 262196, 26, 0, 262197, 21, 0, 262198, 26, 0, 262199, 4, 0, 327699, 11, 0, 327700, 12, 0, 327701, 12, 0, 327702, 12, 0, 327703, 12, 0, 327704, 12, 0, 327705, 13, 0, 327722, 3, 0, 327723, 26, 0, 327724, 21, 0, 327725, 26, 0, 327726, 21, 0, 327727, 26, 0, 327728, 21, 0, 327729, 26, 0, 327730, 21, 0, 327731, 26, 0, 327732, 21, 0, 327733, 26, 0, 327734, 21, 0, 327735, 22, 0, 393235, 11, 0, 393236, 12, 0, 393237, 12, 0, 393238, 12, 0, 393239, 12, 0, 393240, 12, 0, 393241, 13, 0, 393258, 20, 0, 393259, 21, 0, 393260, 26, 0, 393261, 21, 0, 393262, 26, 0, 393263, 21, 0, 393264, 26, 0, 393265, 21, 0, 393266, 26, 0, 393267, 21, 0, 393268, 26, 0, 393269, 21, 0, 393270, 26, 0, 393271, 4, 0, 458771, 11, 0, 458772, 12, 0, 458773, 12, 0, 458774, 12, 0, 458775, 12, 0, 458776, 12, 0, 458777, 13, 0, 458794, 3, 0, 458795, 26, 0, 458796, 21, 0, 458797, 26, 0, 458798, 21, 0, 458799, 26, 0, 458800, 21, 0, 458801, 26, 0, 458802, 21, 0, 458803, 26, 0, 458804, 21, 0, 458805, 26, 0, 458806, 21, 0, 458807, 22, 0, 524307, 11, 0, 524308, 12, 0, 524309, 12, 0, 524310, 12, 0, 524311, 12, 0, 524312, 12, 0, 524313, 13, 0, 524330, 20, 0, 524331, 21, 0, 524332, 26, 0, 524333, 21, 0, 524334, 26, 0, 524335, 21, 0, 524336, 26, 0, 524337, 21, 0, 524338, 26, 0, 524339, 21, 0, 524340, 26, 0, 524341, 21, 0, 524342, 26, 0, 524343, 4, 0, 589843, 11, 0, 589844, 12, 0, 589845, 12, 0, 589846, 12, 0, 589847, 12, 0, 589848, 12, 0, 589849, 13, 0, 589866, 3, 0, 589867, 26, 0, 589868, 21, 0, 589869, 26, 0, 589870, 21, 0, 589871, 26, 0, 589872, 21, 0, 589873, 26, 0, 589874, 21, 0, 589875, 26, 0, 589876, 21, 0, 589877, 26, 0, 589878, 21, 0, 589879, 22, 0, 655379, 11, 0, 655380, 12, 0, 655381, 12, 0, 655382, 12, 0, 655383, 12, 0, 655384, 12, 0, 655385, 13, 0, 655402, 20, 0, 655403, 21, 0, 655404, 26, 0, 655405, 21, 0, 655406, 26, 0, 655407, 21, 0, 655408, 26, 0, 655409, 21, 0, 655410, 26, 0, 655411, 21, 0, 655412, 26, 0, 655413, 21, 0, 655414, 26, 0, 655415, 4, 0, 720915, 11, 0, 720916, 12, 0, 720917, 12, 0, 720918, 12, 0, 720919, 12, 0, 720920, 12, 0, 720921, 13, 0, 720938, 3, 0, 720939, 26, 0, 720940, 21, 0, 720941, 26, 0, 720942, 21, 0, 720943, 26, 0, 720944, 21, 0, 720945, 26, 0, 720946, 21, 0, 720947, 26, 0, 720948, 21, 0, 720949, 26, 0, 720950, 21, 0, 720951, 22, 0, 786451, 11, 0, 786452, 12, 0, 786453, 12, 0, 786454, 12, 0, 786455, 12, 0, 786456, 12, 0, 786457, 13, 0, 786474, 20, 0, 786475, 21, 0, 786476, 26, 0, 786477, 21, 0, 786478, 26, 0, 786479, 21, 0, 786480, 26, 0, 786481, 21, 0, 786482, 26, 0, 786483, 21, 0, 786484, 26, 0, 786485, 21, 0, 786486, 26, 0, 786487, 4, 0, 851987, 14, 0, 851988, 15, 0, 851989, 15, 0, 851990, 15, 0, 851991, 15, 0, 851992, 15, 0, 851993, 16, 0, 852010, 25, 0, 852011, 23, 0, 852012, 6, 0, 852013, 23, 0, 852014, 6, 0, 852015, 23, 0, 852016, 6, 0, 852017, 23, 0, 852018, 6, 0, 852019, 23, 0, 852020, 6, 0, 852021, 23, 0, 852022, 6, 0, 852023, 7, 0 )
+
+[node name="TileMap" type="TileMap" parent="TileMap"]
+position = Vector2( 8, -1.33334 )
+tile_set = ExtResource( 15 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 131098, 27, 0, 131099, 28, 0, 131100, 28, 0, 131101, 28, 0, 131102, 28, 0, 131103, 28, 0, 131104, 28, 0, 131105, 28, 0, 131106, 28, 0, 131107, 28, 0, 131108, 28, 0, 131109, 28, 0, 131110, 28, 0, 131111, 28, 0, 131112, 29, 0, 196634, 30, 0, 196635, 31, 0, 196636, 31, 0, 196637, 31, 0, 196638, 31, 0, 196639, 31, 0, 196640, 31, 0, 196641, 31, 0, 196642, 31, 0, 196643, 31, 0, 196644, 31, 0, 196645, 31, 0, 196646, 31, 0, 196647, 31, 0, 196648, 32, 0, 262170, 30, 0, 262171, 31, 0, 262172, 31, 0, 262173, 31, 0, 262174, 31, 0, 262175, 31, 0, 262176, 31, 0, 262177, 31, 0, 262178, 31, 0, 262179, 31, 0, 262180, 31, 0, 262181, 31, 0, 262182, 31, 0, 262183, 31, 0, 262184, 32, 0, 327706, 30, 0, 327707, 31, 0, 327708, 31, 0, 327709, 31, 0, 327710, 31, 0, 327711, 31, 0, 327712, 31, 0, 327713, 31, 0, 327714, 31, 0, 327715, 31, 0, 327716, 31, 0, 327717, 31, 0, 327718, 31, 0, 327719, 31, 0, 327720, 32, 0, 393242, 30, 0, 393243, 31, 0, 393244, 31, 0, 393245, 31, 0, 393246, 31, 0, 393247, 31, 0, 393248, 31, 0, 393249, 31, 0, 393250, 31, 0, 393251, 31, 0, 393252, 31, 0, 393253, 31, 0, 393254, 31, 0, 393255, 31, 0, 393256, 32, 0, 458778, 30, 0, 458779, 31, 0, 458780, 31, 0, 458781, 31, 0, 458782, 31, 0, 458783, 31, 0, 458784, 31, 0, 458785, 31, 0, 458786, 31, 0, 458787, 31, 0, 458788, 31, 0, 458789, 31, 0, 458790, 31, 0, 458791, 31, 0, 458792, 32, 0, 524314, 30, 0, 524315, 31, 0, 524316, 31, 0, 524317, 31, 0, 524318, 31, 0, 524319, 31, 0, 524320, 31, 0, 524321, 31, 0, 524322, 31, 0, 524323, 31, 0, 524324, 31, 0, 524325, 31, 0, 524326, 31, 0, 524327, 31, 0, 524328, 32, 0, 589850, 30, 0, 589851, 31, 0, 589852, 31, 0, 589853, 31, 0, 589854, 31, 0, 589855, 31, 0, 589856, 31, 0, 589857, 31, 0, 589858, 31, 0, 589859, 31, 0, 589860, 31, 0, 589861, 31, 0, 589862, 31, 0, 589863, 31, 0, 589864, 32, 0, 655386, 30, 0, 655387, 31, 0, 655388, 31, 0, 655389, 31, 0, 655390, 31, 0, 655391, 31, 0, 655392, 31, 0, 655393, 31, 0, 655394, 31, 0, 655395, 31, 0, 655396, 31, 0, 655397, 31, 0, 655398, 31, 0, 655399, 31, 0, 655400, 32, 0, 720922, 30, 0, 720923, 31, 0, 720924, 31, 0, 720925, 31, 0, 720926, 31, 0, 720927, 31, 0, 720928, 31, 0, 720929, 31, 0, 720930, 31, 0, 720931, 31, 0, 720932, 31, 0, 720933, 31, 0, 720934, 31, 0, 720935, 31, 0, 720936, 32, 0, 786458, 30, 0, 786459, 31, 0, 786460, 31, 0, 786461, 31, 0, 786462, 31, 0, 786463, 31, 0, 786464, 31, 0, 786465, 31, 0, 786466, 31, 0, 786467, 31, 0, 786468, 31, 0, 786469, 31, 0, 786470, 31, 0, 786471, 31, 0, 786472, 32, 0, 851994, 33, 0, 851995, 34, 0, 851996, 34, 0, 851997, 34, 0, 851998, 34, 0, 851999, 34, 0, 852000, 34, 0, 852001, 34, 0, 852002, 34, 0, 852003, 34, 0, 852004, 34, 0, 852005, 34, 0, 852006, 34, 0, 852007, 34, 0, 852008, 35, 0 )
 
 [node name="taskbar" type="NinePatchRect" parent="."]
 margin_top = 512.0
@@ -456,34 +114,34 @@ texture = ExtResource( 14 )
 
 [node name="TabContainer" type="TabContainer" parent="."]
 margin_left = 231.0
-margin_top = 104.0
+margin_top = 98.0
 margin_right = 596.0
-margin_bottom = 412.0
+margin_bottom = 406.0
 rect_pivot_offset = Vector2( 43, 108 )
 theme = ExtResource( 6 )
+custom_colors/font_color_bg = Color( 0.188235, 0.188235, 0.188235, 1 )
+custom_fonts/font = ExtResource( 31 )
 tab_align = 0
 
 [node name="Character" type="Tabs" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 3.0
-margin_top = 23.0
-margin_right = -3.0
-margin_bottom = -3.0
+margin_top = 27.0
 
 [node name="NameLabel" type="Label" parent="TabContainer/Character"]
-margin_left = 64.4753
-margin_top = 28.0816
-margin_right = 106.475
-margin_bottom = 42.0816
+margin_left = 37.0
+margin_top = 25.0
+margin_right = 73.0
+margin_bottom = 46.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 31 )
 text = "Name:"
 
 [node name="Name" type="LineEdit" parent="TabContainer/Character/NameLabel"]
-margin_left = 55.3018
-margin_top = -5.2605
-margin_right = 177.302
-margin_bottom = 18.7395
+margin_left = 45.0
+margin_top = -2.0
+margin_right = 167.0
+margin_bottom = 16.0
 
 [node name="Error" type="Label" parent="TabContainer/Character/NameLabel"]
 visible = false
@@ -498,26 +156,32 @@ __meta__ = {
 }
 
 [node name="SkinToneLabel" type="Label" parent="TabContainer/Character"]
-margin_left = 135.373
-margin_top = 128.085
-margin_right = 196.373
-margin_bottom = 142.085
+margin_left = 110.0
+margin_top = 70.0
+margin_right = 171.0
+margin_bottom = 91.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 31 )
 text = "Skin Tone"
 align = 1
 
 [node name="Left" type="Button" parent="TabContainer/Character/SkinToneLabel"]
-margin_left = -59.9649
-margin_top = -3.11892
-margin_right = -23.9648
-margin_bottom = 16.8811
-text = "Left"
+margin_left = -40.0
+margin_top = 1.0
+margin_right = -22.0
+margin_bottom = 19.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 
 [node name="Right" type="Button" parent="TabContainer/Character/SkinToneLabel"]
-margin_left = 72.3359
-margin_top = -2.61157
-margin_right = 116.336
-margin_bottom = 17.3885
-text = "Right"
+margin_left = 80.0
+margin_top = 1.0
+margin_right = 98.0
+margin_bottom = 19.0
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 
 [node name="FemaleButton" type="Button" parent="TabContainer/Character"]
 visible = false
@@ -546,9 +210,9 @@ __meta__ = {
 
 [node name="CharacterTabRandom" type="TextureButton" parent="TabContainer/Character"]
 margin_left = 296.0
-margin_top = 225.0
+margin_top = 219.0
 margin_right = 312.0
-margin_bottom = 241.0
+margin_bottom = 235.0
 rect_scale = Vector2( 3, 3 )
 focus_mode = 1
 enabled_focus_mode = 1
@@ -558,6 +222,7 @@ texture_hover = ExtResource( 24 )
 texture_disabled = ExtResource( 12 )
 
 [node name="Head" type="Tabs" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -1257,6 +922,7 @@ margin_bottom = 539.0
 theme = ExtResource( 30 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 31 )
 text = "Save"
 
 [node name="Export" type="Button" parent="."]
@@ -1267,6 +933,7 @@ margin_bottom = 539.0
 theme = ExtResource( 30 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 31 )
 text = "Quick Export"
 
 [node name="Back" type="Button" parent="."]
@@ -1277,6 +944,7 @@ margin_bottom = 539.0
 theme = ExtResource( 30 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 31 )
 text = "Back"
 
 [node name="Preview" type="Node2D" parent="."]

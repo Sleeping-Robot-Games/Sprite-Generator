@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Ui/palettehover.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Assets/Ui/wifi.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Ui/palettepressed.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Ui/logotemp.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Ui/font.tres" type="DynamicFont" id=17]
 
 [sub_resource type="StyleBoxTexture" id=9]
 texture = ExtResource( 2 )
@@ -80,13 +81,14 @@ custom_styles/pressed = SubResource( 10 )
 custom_styles/normal = SubResource( 12 )
 
 [node name="Create Sprite" type="Label" parent="."]
-margin_left = 58.0
-margin_top = 166.0
-margin_right = 140.0
-margin_bottom = 180.0
+margin_left = 61.0
+margin_top = 163.0
+margin_right = 143.0
+margin_bottom = 184.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 0.196078 )
 custom_constants/shadow_offset_y = 5
+custom_fonts/font = ExtResource( 17 )
 text = "Create Sprite"
 
 [node name="ListShadow" type="Sprite" parent="."]
@@ -106,13 +108,14 @@ custom_styles/pressed = SubResource( 1 )
 custom_styles/normal = SubResource( 3 )
 
 [node name="Spritelist" type="Label" parent="."]
-margin_left = 59.0
-margin_top = 250.0
-margin_right = 123.0
-margin_bottom = 264.0
+margin_left = 61.0
+margin_top = 248.0
+margin_right = 125.0
+margin_bottom = 269.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 0.196078 )
 custom_constants/shadow_offset_y = 5
+custom_fonts/font = ExtResource( 17 )
 text = "Sprite List"
 
 [node name="taskbar" type="NinePatchRect" parent="."]
@@ -143,13 +146,14 @@ texture_pressed = ExtResource( 11 )
 texture_hover = ExtResource( 10 )
 
 [node name="WindowLabel" type="Label" parent="."]
-margin_left = 60.0
-margin_top = 328.0
-margin_right = 126.0
-margin_bottom = 342.0
+margin_left = 62.0
+margin_top = 329.0
+margin_right = 128.0
+margin_bottom = 350.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 0.196078 )
 custom_constants/shadow_offset_y = 5
+custom_fonts/font = ExtResource( 17 )
 text = "Fullscreen"
 
 [node name="battery" type="Sprite" parent="."]
