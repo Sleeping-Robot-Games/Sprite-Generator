@@ -99,6 +99,8 @@ func load_character_from_save():
 	pass
 
 func update_sheet_preview():
+	for frame in $Preview.get_children():
+		frame.queue_free()
 	var state = {'sprite_state': sprite_state, 'palette_state': palette_sprite_state}
 	sprite_generator.create_spritesheet(state, $Preview)
 

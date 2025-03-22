@@ -10,12 +10,11 @@ export(int) var columns = 8
 export(int) var sheet_width = 384
 export(int) var sheet_height = 384
 
-# If you have fewer than 64 directions,
-# you can cycle them by indexing with [i % frame_directions.size()].
+# Cycle directions 4 frames at a time:
 var frame_directions = [
 	"front",
-	"left",
 	"back",
+	"left",
 	"right"
 ]
 
@@ -23,24 +22,23 @@ func _ready():
 	pass
 
 func create_spritesheet(state, parent = null):
-	var cell_width = float(sheet_width) / columns  # 384 / 8 = 48
-	var cell_height = float(sheet_height) / rows   # 384 / 8 = 48
+	var cell_width = float(sheet_width) / columns  # e.g. 384 / 8 = 48
+	var cell_height = float(sheet_height) / rows   # e.g. 384 / 8 = 48
 
 	# We want 64 frames total in an 8×8 arrangement
 	for i in range(rows * columns):
 		# Calculate which row and column this frame belongs to
-		var row = i / columns  # integer division
+		var row = int(i / columns)
 		var col = i % columns
 
-		# If you only have 4 directions but 64 frames:
-		# This will cycle directions: front, left, back, right, front, ...
-		var direction = frame_directions[i % frame_directions.size()]
+		# Determine direction in blocks of 4 frames:
+		var direction_index = int(i / 4) % frame_directions.size()
+		var direction = frame_directions[direction_index]
 
 		# Create the sprite scene
 		var frame_instance = PLAYER_SPRITES_SCENE.instance()
 
 		# Pass a unique frame index (i), the total vframes/hframes, and a direction
-		# The signature matches your PlayerSprites: init(_frame, _vframes, _hframes, _direction)
 		frame_instance.init(
 			i,            # unique frame index
 			rows,         # total vertical frames = 8
@@ -65,7 +63,6 @@ func create_spritesheet(state, parent = null):
 
 func export_spritesheet():
 	show()
-	
 	# Start a short timer to allow the viewport to render before capturing
 	$Timer.start()
 

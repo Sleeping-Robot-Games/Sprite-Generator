@@ -69,7 +69,7 @@ __meta__ = {
 
 [node name="BG" type="Sprite" parent="."]
 self_modulate = Color( 0.54902, 0.521569, 0.615686, 1 )
-position = Vector2( -414, 71 )
+position = Vector2( -419, 74 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 7 )
 offset = Vector2( 599, 148 )

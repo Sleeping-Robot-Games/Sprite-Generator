@@ -13,7 +13,7 @@ func init(_frame, _vframes, _hframes, _direction):
 	sprite_direction = _direction
 
 func _ready():
-	# Load your Z-index library once this node is ready
+	# Load the Z-index library once this node is on the tree
 	z_index_library = load_json("res://Resources/JSON/z_index_player_library.json")
 
 	# For each sprite (child) in SpriteHolder, set frames & tile counts
@@ -22,11 +22,10 @@ func _ready():
 		sprite.vframes = vframes
 		sprite.hframes = hframes
 	
-	# Reorder them based on the direction
+	# Update Z-Index them based on the direction
 	set_node_indices(sprite_direction)
 	
 func create_character(state: Dictionary):
-	# TODO: Apply palette
 	var sprite_state = state.sprite_state
 	var palette_state = state.palette_state
 	
@@ -36,12 +35,15 @@ func create_character(state: Dictionary):
 			var sprite = get_node("SpriteHolder/" + sprite_name)
 			if sprite:
 				sprite.set_texture(load(texture_path))
+				var palette_name = g.get_palette_name_from_sprite(sprite)
+				if palette_name in palette_state:
+					var palette = load("res://Assets/Palettes/" + palette_name + "/palette.png")
+					var color_row = palette_state[palette_name]
+					var rows = palette.get_height()
+					g.set_sprite_color(sprite, palette, color_row, rows)
 			else:
 				print("⚠️WARNING: Sprite node ", sprite_name, " not found in SpriteHolder!")
-		else:
-			pass
-#			print("WARNING: Texture path not found for ", sprite_name)
-	
+
 	# Ensure correct Z-index ordering
 	set_node_indices(sprite_direction)
 	
@@ -54,7 +56,7 @@ func load_json(file_path: String) -> Dictionary:
 	var text = file.get_as_text()
 	return JSON.parse(text).result
 
-func set_node_indices(direction):	
+func set_node_indices(direction):
 	for sprite in $SpriteHolder.get_children():
 		var sprite_name = sprite.name
 		var index_val = z_index_library.get(sprite_name, {}).get(direction, -1)
