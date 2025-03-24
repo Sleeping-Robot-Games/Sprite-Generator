@@ -1,9 +1,11 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Scripts/PlayerSprites.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Shaders/PaletteSwap.shader" type="Shader" id=2]
 [ext_resource path="res://Assets/Palettes/Skintone/palette.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Character/16x32/Shoes/shoes_005.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Character/16x32/HairB/hairb_000.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Palettes/Shoe/palette.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Character/16x32/BottomA/bottoma_001.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Character/16x32/Body/body.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Character/16x32/TopB/topb_001.png" type="Texture" id=10]
@@ -12,7 +14,6 @@
 [ext_resource path="res://Assets/Character/16x32/Eyes/eyes_001.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Character/16x32/AccessoryC/accessoryc_000.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Character/16x32/AccessoryB/accessoryb_000.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Character/16x32/Shoes/shoes_001.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Character/16x32/JacketA/jacketa_000.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Character/16x32/Head/head.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Character/16x32/JacketB/jacketb_000.png" type="Texture" id=19]
@@ -104,8 +105,9 @@ shader_param/color_row = 1
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 2 )
-shader_param/total_rows = 4
-shader_param/color_row = 1
+shader_param/total_rows = 7
+shader_param/color_row = 5
+shader_param/palette = ExtResource( 6 )
 
 [sub_resource type="ShaderMaterial" id=5]
 shader = ExtResource( 2 )
@@ -1096,7 +1098,7 @@ vframes = 8
 
 [node name="Shoes" type="Sprite" parent="SpriteHolder"]
 material = SubResource( 4 )
-texture = ExtResource( 16 )
+texture = ExtResource( 4 )
 hframes = 8
 vframes = 8
 
