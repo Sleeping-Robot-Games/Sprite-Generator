@@ -162,7 +162,8 @@ func ensure_jacket_state():
 	if not '000' in sprite_state['JacketB']:
 		player_sprite['TopB'].set_texture(null)
 	if '000' in sprite_state['JacketA']:
-		player_sprite['JacketB'].set_texture(null)
+		sprite_state['JacketB'] = sprite_folder_path + 'JacketB/jacketb_000.png'
+		player_sprite['JacketB'].set_texture(load(sprite_state['JacketB']))
 
 func ensure_hair(sprite_name):
 	if sprite_name == 'HairB':
