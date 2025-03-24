@@ -1135,7 +1135,7 @@ custom_fonts/font = ExtResource( 31 )
 text = "Back"
 
 [node name="Preview" type="Node2D" parent="."]
-position = Vector2( 603, 36 )
+position = Vector2( 584, 36 )
 
 [connection signal="text_changed" from="TabContainer/Character/NameLabel/Name" to="." method="_on_Name_text_changed"]
 [connection signal="button_up" from="TabContainer/Character/SkinToneLabel/Left" to="." method="_on_Color_Selection_button_up" binds= [ -1, "Skintone" ]]
