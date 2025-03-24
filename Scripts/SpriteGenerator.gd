@@ -22,6 +22,10 @@ func _ready():
 	pass
 
 func create_spritesheet(state, parent = null):
+	var target = parent if parent else $ViewportContainer/Viewport
+	for frame in target.get_children():
+		frame.queue_free()
+		
 	var cell_width = float(sheet_width) / columns  # e.g. 384 / 8 = 48
 	var cell_height = float(sheet_height) / rows   # e.g. 384 / 8 = 48
 
@@ -57,9 +61,10 @@ func create_spritesheet(state, parent = null):
 		else:
 			# Add it to the viewport for rendering
 			$ViewportContainer/Viewport.add_child(frame_instance)
-		
+			
 		# Apply the sprite_state
 		frame_instance.create_character(state)
+
 
 func export_spritesheet():
 	show()

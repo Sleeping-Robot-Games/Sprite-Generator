@@ -99,8 +99,6 @@ func load_character_from_save():
 	pass
 
 func update_sheet_preview():
-	for frame in $Preview.get_children():
-		frame.queue_free()
 	var state = {'sprite_state': sprite_state, 'palette_state': palette_sprite_state}
 	sprite_generator.create_spritesheet(state, $Preview)
 
@@ -156,11 +154,11 @@ func create_random_character() -> void:
 		set_random_color(folder)
 
 	update_sheet_preview()
-	
 
 func ensure_jacket_state():
 	if not '000' in sprite_state['JacketB']:
-		player_sprite['TopB'].set_texture(null)
+		sprite_state['TopB'] = sprite_folder_path + 'TopB/topb_001.png'
+		player_sprite['TopB'].set_texture(load(sprite_state['TopB']))
 	if '000' in sprite_state['JacketA']:
 		sprite_state['JacketB'] = sprite_folder_path + 'JacketB/jacketb_000.png'
 		player_sprite['JacketB'].set_texture(load(sprite_state['JacketB']))
@@ -169,9 +167,14 @@ func ensure_hair(sprite_name):
 	if sprite_name == 'HairB':
 		var hair_d_texture = sprite_folder_path + '/HairD/' + 'haird_' + get_sprite_number_from_name(sprite_name) + '.png'
 		if ResourceLoader.exists(hair_d_texture):
+			sprite_state['HairD'] = hair_d_texture
 			player_sprite['HairD'].set_texture(load(hair_d_texture))
 	if sprite_name == 'HairC' and get_sprite_number_from_name("HairA") == '001':
-		player_sprite['HairC'].set_texture(null)
+		sprite_state['HairC'] = sprite_folder_path + 'HairC/hairc_000.png'
+		player_sprite['HairC'].set_texture(load(sprite_state['HairC']))
+	if sprite_name == 'HairA' and get_sprite_number_from_name("HairA") == '001' and get_sprite_number_from_name("HairC") != '000':
+		sprite_state['HairC'] = sprite_folder_path + 'HairC/hairc_000.png'
+		player_sprite['HairC'].set_texture(load(sprite_state['HairC']))
 
 func get_sprite_number_from_name(sprite_name):
 	return sprite_state[sprite_name].substr(len(sprite_state[sprite_name]) - 7, 3)
