@@ -100,7 +100,6 @@ custom_fonts/font = ExtResource( 31 )
 tab_align = 0
 
 [node name="Character" type="Tabs" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 27.0
@@ -578,6 +577,7 @@ texture_disabled = ExtResource( 12 )
 texture_focused = ExtResource( 11 )
 
 [node name="Top" type="Tabs" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 27.0
