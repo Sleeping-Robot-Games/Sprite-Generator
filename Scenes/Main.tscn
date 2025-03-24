@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Ui/palettehover.png" type="Texture" id=2]
@@ -17,6 +17,9 @@
 [ext_resource path="res://Assets/Ui/palettepressed.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Ui/title.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Ui/font.tres" type="DynamicFont" id=17]
+[ext_resource path="res://Assets/Ui/paletteshadow.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Ui/foldershadow.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Ui/magnifyingshadow.png" type="Texture" id=20]
 
 [sub_resource type="StyleBoxTexture" id=9]
 texture = ExtResource( 2 )
@@ -58,10 +61,9 @@ position = Vector2( 490, 135 )
 texture = ExtResource( 16 )
 
 [node name="Createshadow" type="Sprite" parent="."]
-self_modulate = Color( 0.239216, 0.101961, 0.227451, 0.572549 )
 position = Vector2( 95, 138 )
 scale = Vector2( 3, 3 )
-texture = ExtResource( 13 )
+texture = ExtResource( 18 )
 
 [node name="Create" type="Button" parent="."]
 margin_left = 65.0
@@ -85,10 +87,9 @@ custom_fonts/font = ExtResource( 17 )
 text = "Create Sprite"
 
 [node name="ListShadow" type="Sprite" parent="."]
-self_modulate = Color( 0.2, 0.0431373, 0.203922, 0.560784 )
 position = Vector2( 69.3894, 226.996 )
 scale = Vector2( 3.14934, 2.6255 )
-texture = ExtResource( 4 )
+texture = ExtResource( 19 )
 
 [node name="List" type="Button" parent="."]
 margin_left = 16.0
@@ -123,10 +124,9 @@ patch_margin_right = 3
 patch_margin_bottom = 3
 
 [node name="WindowChangeShadow" type="Sprite" parent="."]
-self_modulate = Color( 0.192157, 0.0666667, 0.141176, 0.631373 )
 position = Vector2( 90, 310 )
 scale = Vector2( 3, 3 )
-texture = ExtResource( 9 )
+texture = ExtResource( 20 )
 
 [node name="WindowChange" type="TextureButton" parent="."]
 margin_left = 67.0
