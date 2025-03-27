@@ -226,12 +226,6 @@ func ensure_hair(sprite_name):
 		if ResourceLoader.exists(hair_d_texture):
 			sprite_state['HairD'] = hair_d_texture
 			player_sprite['HairD'].set_texture(load(hair_d_texture))
-	if sprite_name == 'HairC' and get_sprite_number_from_name("HairA") == '001':
-		sprite_state['HairC'] = sprite_folder_path + 'HairC/hairc_000.png'
-		player_sprite['HairC'].set_texture(load(sprite_state['HairC']))
-	if sprite_name == 'HairA' and get_sprite_number_from_name("HairA") == '001' and get_sprite_number_from_name("HairC") != '000':
-		sprite_state['HairC'] = sprite_folder_path + 'HairC/hairc_000.png'
-		player_sprite['HairC'].set_texture(load(sprite_state['HairC']))
 
 func get_sprite_number_from_name(sprite_name):
 	return sprite_state[sprite_name].substr(len(sprite_state[sprite_name]) - 7, 3)
