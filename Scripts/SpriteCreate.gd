@@ -9,7 +9,8 @@ export var hair_B_chance = 10
 export var hair_C_chance = 10
 export var jacket_A_chance = 10
 
-var sprite_chances: Dictionary = {
+## If we want to remove these weighted values later, just empty the dictionary in _ready
+onready var sprite_chances: Dictionary = {
 	"AccessoryA": accessory_A_chance,
 	"AccessoryB": accessory_B_chance,
 	"AccessoryC": accessory_C_chance,
@@ -150,7 +151,25 @@ func set_random_color(palette_type: String) -> void:
 		palette_sprite_state[palette_type] = random_color
 		
 func set_random_texture(sprite_name: String) -> void:
-	var random_sprite = random_asset(sprite_folder_path + sprite_name)
+	var folder_path = sprite_folder_path + sprite_name + "/"
+	var files = g.files_in_dir(folder_path)
+
+	# Exclude `_000.png` from random selection for chance-controlled sprites
+	if sprite_chances.has(sprite_name) and sprite_chances[sprite_name] > 0:
+		var filtered_files = []
+		for file in files:
+			if not file.ends_with("_000.png"):
+				filtered_files.append(file)
+		files = filtered_files
+
+	# If there are no usable files, fallback is handled elsewhere
+	if files.empty():
+		return
+
+	randomize()
+	var random_file = files[randi() % files.size()]
+	var random_sprite = folder_path + random_file
+	
 	if random_sprite == "": # No assets in the folder yet continue to next folder
 		return
 	if "000" in random_sprite and not "Accessory" in random_sprite: # Prevent some empty sprite sheets
