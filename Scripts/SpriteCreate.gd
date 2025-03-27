@@ -2,6 +2,23 @@ extends Node2D
 
 var rng = RandomNumberGenerator.new()
 
+export var accessory_A_chance = 10
+export var accessory_B_chance = 10
+export var accessory_C_chance = 10
+export var hair_B_chance = 10
+export var hair_C_chance = 10
+export var jacket_A_chance = 10
+
+var sprite_chances: Dictionary = {
+	"AccessoryA": accessory_A_chance,
+	"AccessoryB": accessory_B_chance,
+	"AccessoryC": accessory_C_chance,
+	"HairB": hair_B_chance,
+	"HairC": hair_C_chance,
+	"JacketA": jacket_A_chance,
+}
+
+
 onready var player_sprite: Dictionary = {
 	'AccessoryA': $PlayerSprites/SpriteHolder/AccessoryA,
 	'AccessoryB': $PlayerSprites/SpriteHolder/AccessoryB,
@@ -143,17 +160,38 @@ func set_random_texture(sprite_name: String) -> void:
 			return
 	set_sprite_texture(sprite_name, random_sprite)
 
+		
 func create_random_character() -> void:
 	var sprite_folders = g.files_in_dir(sprite_folder_path)
 	var palette_folders = g.files_in_dir(palette_folder_path)
+
 	for folder in sprite_folders:
-		if folder == 'HairD':
+		rng.randomize()
+
+		var folder_path = sprite_folder_path + folder + "/"
+		var zero_sprite_path = folder_path + folder.to_lower() + "_000.png"
+
+		# Apply _000 version if sprite is excluded based on chance
+		if sprite_chances.has(folder):
+			if rng.randi() % 100 >= sprite_chances[folder]:
+				if ResourceLoader.exists(zero_sprite_path):
+					set_sprite_texture(folder, zero_sprite_path)
+				continue
+
+		# Apply default HairD
+		if folder == "HairD":
+			if ResourceLoader.exists(zero_sprite_path):
+				set_sprite_texture("HairD", zero_sprite_path)
 			continue
+
 		set_random_texture(folder)
+
 	for folder in palette_folders:
 		set_random_color(folder)
 
 	update_sheet_preview()
+
+
 
 func ensure_jacket_state():
 	if not '000' in sprite_state['JacketB']:
