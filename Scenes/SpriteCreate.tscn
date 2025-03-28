@@ -42,9 +42,14 @@ __meta__ = {
 "_edit_horizontal_guides_": [ 145.0, 165.756, 170.0, 190.767, 195.158, 215.844, 220.245, 240.491, 245.773, 265.578, 270.42, 290.666, 295.067, 315.313, 320.293, 398.225, 437.766 ],
 "_edit_vertical_guides_": [ 420.0, 320.0, 520.0, 139.001, 127.286, 149.686 ]
 }
+accessory_A_chance = 25
+accessory_B_chance = 25
+accessory_C_chance = 30
+hair_B_chance = 70
+hair_C_chance = 40
+jacket_A_chance = 35
 
 [node name="BG" type="Sprite" parent="."]
-self_modulate = Color( 0.54902, 0.521569, 0.615686, 1 )
 position = Vector2( -419, 74 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 7 )
@@ -1065,7 +1070,7 @@ texture_disabled = ExtResource( 12 )
 texture_focused = ExtResource( 11 )
 
 [node name="PlayerSprites" parent="." instance=ExtResource( 5 )]
-position = Vector2( 136, 254 )
+position = Vector2( 136, 263 )
 scale = Vector2( 6, 6 )
 
 [node name="Random" type="TextureButton" parent="."]
@@ -1081,9 +1086,9 @@ texture_disabled = ExtResource( 27 )
 
 [node name="TurnLeft" type="TextureButton" parent="."]
 margin_left = 416.304
-margin_top = 285.388
+margin_top = 290.388
 margin_right = 432.304
-margin_bottom = 301.388
+margin_bottom = 306.388
 rect_scale = Vector2( 3, 3 )
 rect_pivot_offset = Vector2( 165.652, -35.306 )
 texture_normal = ExtResource( 22 )
@@ -1092,9 +1097,9 @@ texture_hover = ExtResource( 16 )
 
 [node name="TurnRight" type="TextureButton" parent="."]
 margin_left = 288.0
-margin_top = 286.0
+margin_top = 291.0
 margin_right = 304.0
-margin_bottom = 302.0
+margin_bottom = 307.0
 rect_scale = Vector2( 3, 3 )
 rect_pivot_offset = Vector2( 73.461, -34.762 )
 texture_normal = ExtResource( 21 )
@@ -1135,6 +1140,7 @@ custom_fonts/font = ExtResource( 31 )
 text = "Back"
 
 [node name="Preview" type="Node2D" parent="."]
+visible = false
 position = Vector2( 584, 36 )
 
 [connection signal="text_changed" from="TabContainer/Character/NameLabel/Name" to="." method="_on_Name_text_changed"]
