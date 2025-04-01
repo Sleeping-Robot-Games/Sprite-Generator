@@ -1,8 +1,17 @@
-[gd_resource type="Theme" load_steps=7 format=2]
+[gd_resource type="Theme" load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Ui/tbbutton.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Ui/tbbuttonpressed.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Ui/tbbuttonhover.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Ui/tbbuttondisabled.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 9, 9 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 3.0
 
 [sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 3 )
@@ -29,6 +38,7 @@ margin_top = 3.0
 margin_bottom = 3.0
 
 [resource]
+Button/styles/disabled = SubResource( 4 )
 Button/styles/hover = SubResource( 2 )
 Button/styles/normal = SubResource( 1 )
 Button/styles/pressed = SubResource( 3 )
