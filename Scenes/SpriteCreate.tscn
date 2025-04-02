@@ -144,6 +144,8 @@ margin_left = 45.0
 margin_top = -2.0
 margin_right = 167.0
 margin_bottom = 16.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 31 )
 
 [node name="Error" type="Label" parent="TabContainer/Character/NameLabel"]
 visible = false
@@ -152,6 +154,7 @@ margin_top = 24.0
 margin_right = 171.0
 margin_bottom = 38.0
 custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = ExtResource( 31 )
 text = "Name is Required"
 __meta__ = {
 "_edit_use_anchors_": false

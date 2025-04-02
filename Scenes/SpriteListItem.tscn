@@ -71,6 +71,7 @@ margin_right = 370.0
 margin_bottom = 140.0
 
 [node name="Edit" type="Button" parent="ButtonContainer"]
+visible = false
 margin_left = -5.0
 margin_top = 46.0
 margin_right = 35.0

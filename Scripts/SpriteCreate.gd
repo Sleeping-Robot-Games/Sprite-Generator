@@ -104,8 +104,8 @@ var current_animation = 0
 
 func _ready():
 	$TabContainer/Character/CharacterTabRandom.connect('button_up', self, '_on_Random_Tab_button_up', [[],['Skintone']])
-	$TabContainer/Head/HeadTabRandom.connect('button_up', self, '_on_Random_Tab_button_up', [['HairA', 'HairB', 'HairC', 'HairD', 'Eyes', 'Head', 'AccessoryB', 'AccessoryC'],['Hair', 'Eye', 'AccessoryB', 'AccessoryC']])
-	$TabContainer/Top/TopTabRandom.connect('button_up', self, '_on_Random_Tab_button_up', [['AccessoryA', 'JacketA', 'JacketB', 'TopA', 'TopB'],['AccessoryA', 'Jacket', 'Top']])
+	$TabContainer/Head/HeadTabRandom.connect('button_up', self, '_on_Random_Tab_button_up', [['HairA', 'HairB', 'HairC', 'HairD', 'Eyes', 'Head','AccessoryA', 'AccessoryB', 'AccessoryC'],['Hair', 'Eye','AccessoryA', 'AccessoryB', 'AccessoryC']])
+	$TabContainer/Top/TopTabRandom.connect('button_up', self, '_on_Random_Tab_button_up', [['JacketA', 'JacketB', 'TopA', 'TopB'],['Jacket', 'Top']])
 	$TabContainer/Bottom/BottomTabRandom.connect('button_up', self, '_on_Random_Tab_button_up', [['BottomA', 'BottomB', 'Shoes'], ['Bottom', 'Shoe']])
 	create_random_character()
 	$PlayerSprites/AnimationPlayer.play("idle_front")
@@ -274,7 +274,7 @@ func _on_Color_Selection_button_up(direction: int, palette_sprite: String):
 func _on_Save_button_up():
 	var player_name = $TabContainer/Character/NameLabel/Name.text
 	if player_name == "":
-		# TODO: if this is true move to character tab and show error
+		$TabContainer.current_tab = 0
 		$TabContainer/Character/NameLabel/Error.text = "Name is Required"
 		$TabContainer/Character/NameLabel/Error.show()
 	elif g.sprite_name_exists(player_name):
