@@ -6,19 +6,39 @@ func _ready():
 func files_in_dir(path: String, keyword: String = "") -> Array:
 	var files = []
 	var dir = Directory.new()
-	dir.open(path)
-	dir.list_dir_begin()
-	while true:
-		var file = dir.get_next()
-		if file == "":
-			break
-		elif keyword != "" and file.find(keyword) == -1:
-			continue
-		elif not file.begins_with(".") and not file.ends_with(".import"):
-			files.append(file)
-	dir.list_dir_end()
+	var dir_open = dir.open(path)
+	if dir_open == OK:
+		dir.list_dir_begin(true, true)
+		while true:
+			var file = dir.get_next()
+			if file == "":
+				break
+			if keyword != "" and file.find(keyword) == -1:
+				continue
+			if not file.begins_with(".") and file.ends_with(".import"): # this is for sprites only
+				files.append(file.replace(".import", ""))
+			elif file.ends_with(".save") or file.ends_with(".cache"): # inclusion for saves
+				files.append(file)
+		dir.list_dir_end()
+	else:
+		print('ERROR: failed to open folder '+path+'  RC:'+str(dir_open))
 	return files
-	
+
+func folders_in_dir(path: String) -> Array:
+	var folders = []
+	var dir = Directory.new()
+	dir.open(path)
+	dir.list_dir_begin(true, true)
+	while true:
+		var folder = dir.get_next()
+		if folder == "":
+			break
+		if not folder.begins_with("."):
+			folders.append(folder)
+	dir.list_dir_end()
+	return folders
+
+
 func save_sprite(sprite_state: Dictionary, palette_state: Dictionary, player_name: String):
 	var f: File = File.new()
 	f.open("user://characters.save", File.READ_WRITE)

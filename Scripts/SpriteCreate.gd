@@ -181,8 +181,8 @@ func set_random_texture(sprite_name: String) -> void:
 
 		
 func create_random_character() -> void:
-	var sprite_folders = g.files_in_dir(sprite_folder_path)
-	var palette_folders = g.files_in_dir(palette_folder_path)
+	var sprite_folders = g.folders_in_dir(sprite_folder_path)
+	var palette_folders = g.folders_in_dir(palette_folder_path)
 
 	for folder in sprite_folders:
 		rng.randomize()

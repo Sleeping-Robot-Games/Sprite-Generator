@@ -12,24 +12,10 @@ func init(_frame, _vframes, _hframes, _direction):
 	hframes = _hframes
 	sprite_direction = _direction
 
-func load_z_index_library():
-	var file = File.new()
-	if file.file_exists("res://Resources/JSON/z_index_player_library.json"):
-		file.open("res://Resources/JSON/z_index_player_library.json", File.READ)
-		var text = file.get_as_text()
-		file.close()
-		var parsed = JSON.parse(text)
-		if parsed.error == OK:
-			z_index_library = parsed.result
-		else:
-			print("JSON parse error: ", parsed.error_string)
-	else:
-		print("JSON file not found!")
-
 
 func _ready():
 	# Load the Z-index library once this node is on the tree
-	load_z_index_library()
+	z_index_library = load_json("res://Resources/JSON/z_index_player_library.json")
 
 	# For each sprite (child) in SpriteHolder, set frames & tile counts
 	for sprite in $SpriteHolder.get_children():
