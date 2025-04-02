@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/SpriteList.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Ui/Bg_003.png" type="Texture" id=2]
@@ -8,6 +8,14 @@
 [ext_resource path="res://Assets/Ui/wifi.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Ui/battery.png" type="Texture" id=7]
 [ext_resource path="res://taskbar.tres" type="Theme" id=8]
+[ext_resource path="res://Assets/Ui/uitheme.tres" type="Theme" id=9]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Assets/Ui/that_old__90s_computer_font_by_thebitchisback420_ddbqpfn.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = SubResource( 1 )
 
 [node name="SpriteList" type="Node2D"]
 script = ExtResource( 1 )
@@ -28,21 +36,22 @@ scroll_horizontal_enabled = false
 margin_right = 500.0
 margin_bottom = 300.0
 rect_min_size = Vector2( 500, 300 )
+theme = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 234.0
+margin_left = 227.0
 margin_top = 10.0
-margin_right = 406.0
-margin_bottom = 37.0
+margin_right = 399.0
+margin_bottom = 52.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = SubResource( 2 )
 text = "Sprite List"
 align = 1
 
 [node name="taskbar" type="NinePatchRect" parent="Label"]
 margin_left = -234.0
 margin_top = 502.0
-margin_right = 726.0
+margin_right = 735.0
 margin_bottom = 530.0
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 9, 9 )

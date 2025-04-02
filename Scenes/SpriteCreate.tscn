@@ -1,9 +1,6 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Scripts/SpriteCreate.gd" type="Script" id=1]
-[ext_resource path="res://Resources/ButtonGroups/genderButtonGroup.tres" type="ButtonGroup" id=2]
-[ext_resource path="res://Assets/DressUp/Female.png" type="Texture" id=3]
-[ext_resource path="res://Assets/DressUp/Male.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/PlayerSprites.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Ui/uitheme.tres" type="Theme" id=6]
 [ext_resource path="res://Assets/Ui/Bg_002.png" type="Texture" id=7]
@@ -190,31 +187,6 @@ texture_pressed = ExtResource( 33 )
 texture_hover = ExtResource( 32 )
 expand = true
 
-[node name="FemaleButton" type="Button" parent="TabContainer/Character"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 264.0
-margin_top = 23.6652
-margin_right = -65.0
-margin_bottom = -226.335
-group = ExtResource( 2 )
-icon = ExtResource( 3 )
-
-[node name="MaleButton" type="Button" parent="TabContainer/Character"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 299.0
-margin_top = 24.5
-margin_right = -30.0
-margin_bottom = -225.5
-group = ExtResource( 2 )
-icon = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="CharacterTabRandom" type="TextureButton" parent="TabContainer/Character"]
 margin_left = 296.0
 margin_top = 219.0
@@ -236,50 +208,13 @@ margin_top = 27.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Head"]
 margin_left = 88.0
-margin_top = 28.0
+margin_top = 22.0
 margin_right = 246.0
-margin_bottom = 274.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Head/VBoxContainer"]
-margin_right = 158.0
-margin_bottom = 21.0
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="Left" type="TextureButton" parent="TabContainer/Head/VBoxContainer/HBoxContainer"]
-margin_right = 18.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 18, 18 )
-texture_normal = ExtResource( 28 )
-texture_pressed = ExtResource( 34 )
-texture_hover = ExtResource( 35 )
-expand = true
-
-[node name="AccessoryBColorLabel" type="Label" parent="TabContainer/Head/VBoxContainer/HBoxContainer"]
-margin_left = 22.0
-margin_right = 136.0
-margin_bottom = 21.0
-size_flags_horizontal = 3
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 31 )
-text = "Head Color"
-align = 1
-valign = 1
-
-[node name="Right" type="TextureButton" parent="TabContainer/Head/VBoxContainer/HBoxContainer"]
-margin_left = 140.0
-margin_right = 158.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 18, 18 )
-texture_normal = ExtResource( 23 )
-texture_pressed = ExtResource( 33 )
-texture_hover = ExtResource( 32 )
-expand = true
+margin_bottom = 268.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Head/VBoxContainer"]
-margin_top = 25.0
 margin_right = 158.0
-margin_bottom = 46.0
+margin_bottom = 21.0
 size_flags_horizontal = 3
 alignment = 1
 
@@ -313,12 +248,14 @@ texture_pressed = ExtResource( 33 )
 texture_hover = ExtResource( 32 )
 expand = true
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="TabContainer/Head/VBoxContainer"]
-margin_top = 50.0
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Head/VBoxContainer"]
+margin_top = 25.0
 margin_right = 158.0
-margin_bottom = 71.0
+margin_bottom = 46.0
+size_flags_horizontal = 3
+alignment = 1
 
-[node name="Left" type="TextureButton" parent="TabContainer/Head/VBoxContainer/HBoxContainer3"]
+[node name="Left" type="TextureButton" parent="TabContainer/Head/VBoxContainer/HBoxContainer"]
 margin_right = 18.0
 margin_bottom = 21.0
 rect_min_size = Vector2( 18, 18 )
@@ -327,18 +264,18 @@ texture_pressed = ExtResource( 34 )
 texture_hover = ExtResource( 35 )
 expand = true
 
-[node name="AccessoryAColorLabel" type="Label" parent="TabContainer/Head/VBoxContainer/HBoxContainer3"]
+[node name="AccessoryBColorLabel" type="Label" parent="TabContainer/Head/VBoxContainer/HBoxContainer"]
 margin_left = 22.0
 margin_right = 136.0
 margin_bottom = 21.0
 size_flags_horizontal = 3
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 31 )
-text = "Face Color"
+text = "Head Color"
 align = 1
 valign = 1
 
-[node name="Right" type="TextureButton" parent="TabContainer/Head/VBoxContainer/HBoxContainer3"]
+[node name="Right" type="TextureButton" parent="TabContainer/Head/VBoxContainer/HBoxContainer"]
 margin_left = 140.0
 margin_right = 158.0
 margin_bottom = 21.0
@@ -349,9 +286,9 @@ texture_hover = ExtResource( 32 )
 expand = true
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="TabContainer/Head/VBoxContainer"]
-margin_top = 75.0
+margin_top = 50.0
 margin_right = 158.0
-margin_bottom = 96.0
+margin_bottom = 71.0
 
 [node name="Left" type="TextureButton" parent="TabContainer/Head/VBoxContainer/HBoxContainer4"]
 margin_right = 18.0
@@ -374,6 +311,41 @@ align = 1
 valign = 1
 
 [node name="Right" type="TextureButton" parent="TabContainer/Head/VBoxContainer/HBoxContainer4"]
+margin_left = 140.0
+margin_right = 158.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 18, 18 )
+texture_normal = ExtResource( 23 )
+texture_pressed = ExtResource( 33 )
+texture_hover = ExtResource( 32 )
+expand = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="TabContainer/Head/VBoxContainer"]
+margin_top = 75.0
+margin_right = 158.0
+margin_bottom = 96.0
+
+[node name="Left" type="TextureButton" parent="TabContainer/Head/VBoxContainer/HBoxContainer3"]
+margin_right = 18.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 18, 18 )
+texture_normal = ExtResource( 28 )
+texture_pressed = ExtResource( 34 )
+texture_hover = ExtResource( 35 )
+expand = true
+
+[node name="AccessoryAColorLabel" type="Label" parent="TabContainer/Head/VBoxContainer/HBoxContainer3"]
+margin_left = 22.0
+margin_right = 136.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 31 )
+text = "Face Color"
+align = 1
+valign = 1
+
+[node name="Right" type="TextureButton" parent="TabContainer/Head/VBoxContainer/HBoxContainer3"]
 margin_left = 140.0
 margin_right = 158.0
 margin_bottom = 21.0
@@ -613,47 +585,13 @@ margin_top = 27.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Top"]
 margin_left = 88.0
-margin_top = 28.0
+margin_top = 22.0
 margin_right = 246.0
-margin_bottom = 224.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Top/VBoxContainer"]
-margin_right = 158.0
-margin_bottom = 21.0
-
-[node name="Left" type="TextureButton" parent="TabContainer/Top/VBoxContainer/HBoxContainer"]
-margin_right = 18.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 18, 18 )
-texture_normal = ExtResource( 28 )
-texture_pressed = ExtResource( 34 )
-texture_hover = ExtResource( 35 )
-expand = true
-
-[node name="AccessoryCColorLabel" type="Label" parent="TabContainer/Top/VBoxContainer/HBoxContainer"]
-margin_left = 22.0
-margin_right = 136.0
-margin_bottom = 21.0
-size_flags_horizontal = 3
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 31 )
-text = "Neck Color"
-align = 1
-
-[node name="Right" type="TextureButton" parent="TabContainer/Top/VBoxContainer/HBoxContainer"]
-margin_left = 140.0
-margin_right = 158.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 18, 18 )
-texture_normal = ExtResource( 23 )
-texture_pressed = ExtResource( 33 )
-texture_hover = ExtResource( 32 )
-expand = true
+margin_bottom = 218.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Top/VBoxContainer"]
-margin_top = 25.0
 margin_right = 158.0
-margin_bottom = 46.0
+margin_bottom = 21.0
 
 [node name="Left" type="TextureButton" parent="TabContainer/Top/VBoxContainer/HBoxContainer2"]
 margin_right = 18.0
@@ -675,6 +613,40 @@ text = "Neck"
 align = 1
 
 [node name="Right" type="TextureButton" parent="TabContainer/Top/VBoxContainer/HBoxContainer2"]
+margin_left = 140.0
+margin_right = 158.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 18, 18 )
+texture_normal = ExtResource( 23 )
+texture_pressed = ExtResource( 33 )
+texture_hover = ExtResource( 32 )
+expand = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Top/VBoxContainer"]
+margin_top = 25.0
+margin_right = 158.0
+margin_bottom = 46.0
+
+[node name="Left" type="TextureButton" parent="TabContainer/Top/VBoxContainer/HBoxContainer"]
+margin_right = 18.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 18, 18 )
+texture_normal = ExtResource( 28 )
+texture_pressed = ExtResource( 34 )
+texture_hover = ExtResource( 35 )
+expand = true
+
+[node name="AccessoryCColorLabel" type="Label" parent="TabContainer/Top/VBoxContainer/HBoxContainer"]
+margin_left = 22.0
+margin_right = 136.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 31 )
+text = "Neck Color"
+align = 1
+
+[node name="Right" type="TextureButton" parent="TabContainer/Top/VBoxContainer/HBoxContainer"]
 margin_left = 140.0
 margin_right = 158.0
 margin_bottom = 21.0
@@ -718,10 +690,44 @@ texture_pressed = ExtResource( 33 )
 texture_hover = ExtResource( 32 )
 expand = true
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="TabContainer/Top/VBoxContainer"]
+[node name="HBoxContainer5" type="HBoxContainer" parent="TabContainer/Top/VBoxContainer"]
 margin_top = 75.0
 margin_right = 158.0
 margin_bottom = 96.0
+
+[node name="Left" type="TextureButton" parent="TabContainer/Top/VBoxContainer/HBoxContainer5"]
+margin_right = 18.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 18, 18 )
+texture_normal = ExtResource( 28 )
+texture_pressed = ExtResource( 34 )
+texture_hover = ExtResource( 35 )
+expand = true
+
+[node name="ShirtBLabel" type="Label" parent="TabContainer/Top/VBoxContainer/HBoxContainer5"]
+margin_left = 22.0
+margin_right = 136.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 31 )
+text = "Shirt Sleeve"
+align = 1
+
+[node name="Right" type="TextureButton" parent="TabContainer/Top/VBoxContainer/HBoxContainer5"]
+margin_left = 140.0
+margin_right = 158.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 18, 18 )
+texture_normal = ExtResource( 23 )
+texture_pressed = ExtResource( 33 )
+texture_hover = ExtResource( 32 )
+expand = true
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="TabContainer/Top/VBoxContainer"]
+margin_top = 100.0
+margin_right = 158.0
+margin_bottom = 121.0
 
 [node name="Left" type="TextureButton" parent="TabContainer/Top/VBoxContainer/HBoxContainer4"]
 margin_right = 18.0
@@ -743,40 +749,6 @@ text = "Shirt Color"
 align = 1
 
 [node name="Right" type="TextureButton" parent="TabContainer/Top/VBoxContainer/HBoxContainer4"]
-margin_left = 140.0
-margin_right = 158.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 18, 18 )
-texture_normal = ExtResource( 23 )
-texture_pressed = ExtResource( 33 )
-texture_hover = ExtResource( 32 )
-expand = true
-
-[node name="HBoxContainer5" type="HBoxContainer" parent="TabContainer/Top/VBoxContainer"]
-margin_top = 100.0
-margin_right = 158.0
-margin_bottom = 121.0
-
-[node name="Left" type="TextureButton" parent="TabContainer/Top/VBoxContainer/HBoxContainer5"]
-margin_right = 18.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 18, 18 )
-texture_normal = ExtResource( 28 )
-texture_pressed = ExtResource( 34 )
-texture_hover = ExtResource( 35 )
-expand = true
-
-[node name="ShirtBLabel" type="Label" parent="TabContainer/Top/VBoxContainer/HBoxContainer5"]
-margin_left = 22.0
-margin_right = 136.0
-margin_bottom = 21.0
-size_flags_horizontal = 3
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 31 )
-text = "Sleeve"
-align = 1
-
-[node name="Right" type="TextureButton" parent="TabContainer/Top/VBoxContainer/HBoxContainer5"]
 margin_left = 140.0
 margin_right = 158.0
 margin_bottom = 21.0
@@ -841,7 +813,7 @@ margin_bottom = 21.0
 size_flags_horizontal = 3
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 31 )
-text = "Sleeve"
+text = "Jacket Sleeve"
 align = 1
 
 [node name="Right" type="TextureButton" parent="TabContainer/Top/VBoxContainer/HBoxContainer7"]
@@ -908,9 +880,9 @@ margin_top = 27.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Bottom"]
 margin_left = 88.0
-margin_top = 28.0
+margin_top = 22.0
 margin_right = 246.0
-margin_bottom = 134.0
+margin_bottom = 143.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Bottom/VBoxContainer"]
 margin_right = 158.0
@@ -1172,14 +1144,14 @@ position = Vector2( 584, 36 )
 [connection signal="text_changed" from="TabContainer/Character/NameLabel/Name" to="." method="_on_Name_text_changed"]
 [connection signal="button_up" from="TabContainer/Character/SkinToneLabel/Left" to="." method="_on_Color_Selection_button_up" binds= [ -1, "Skintone" ]]
 [connection signal="button_up" from="TabContainer/Character/SkinToneLabel/Right" to="." method="_on_Color_Selection_button_up" binds= [ 1, "Skintone" ]]
-[connection signal="button_up" from="TabContainer/Head/VBoxContainer/HBoxContainer/Left" to="." method="_on_Color_Selection_button_up" binds= [ -1, "AccessoryB" ]]
-[connection signal="button_up" from="TabContainer/Head/VBoxContainer/HBoxContainer/Right" to="." method="_on_Color_Selection_button_up" binds= [ 1, "AccessoryB" ]]
 [connection signal="button_up" from="TabContainer/Head/VBoxContainer/HBoxContainer2/Left" to="." method="_on_Sprite_Selection_button_up" binds= [ -1, "AccessoryB" ]]
 [connection signal="button_up" from="TabContainer/Head/VBoxContainer/HBoxContainer2/Right" to="." method="_on_Sprite_Selection_button_up" binds= [ 1, "AccessoryB" ]]
-[connection signal="button_up" from="TabContainer/Head/VBoxContainer/HBoxContainer3/Left" to="." method="_on_Color_Selection_button_up" binds= [ -1, "AccessoryA" ]]
-[connection signal="button_up" from="TabContainer/Head/VBoxContainer/HBoxContainer3/Right" to="." method="_on_Color_Selection_button_up" binds= [ 1, "AccessoryA" ]]
+[connection signal="button_up" from="TabContainer/Head/VBoxContainer/HBoxContainer/Left" to="." method="_on_Color_Selection_button_up" binds= [ -1, "AccessoryB" ]]
+[connection signal="button_up" from="TabContainer/Head/VBoxContainer/HBoxContainer/Right" to="." method="_on_Color_Selection_button_up" binds= [ 1, "AccessoryB" ]]
 [connection signal="button_up" from="TabContainer/Head/VBoxContainer/HBoxContainer4/Left" to="." method="_on_Sprite_Selection_button_up" binds= [ -1, "AccessoryA" ]]
 [connection signal="button_up" from="TabContainer/Head/VBoxContainer/HBoxContainer4/Right" to="." method="_on_Sprite_Selection_button_up" binds= [ 1, "AccessoryA" ]]
+[connection signal="button_up" from="TabContainer/Head/VBoxContainer/HBoxContainer3/Left" to="." method="_on_Color_Selection_button_up" binds= [ -1, "AccessoryA" ]]
+[connection signal="button_up" from="TabContainer/Head/VBoxContainer/HBoxContainer3/Right" to="." method="_on_Color_Selection_button_up" binds= [ 1, "AccessoryA" ]]
 [connection signal="button_up" from="TabContainer/Head/VBoxContainer/HBoxContainer5/Left" to="." method="_on_Sprite_Selection_button_up" binds= [ -1.0, "HairA" ]]
 [connection signal="button_up" from="TabContainer/Head/VBoxContainer/HBoxContainer5/Right" to="." method="_on_Sprite_Selection_button_up" binds= [ 1, "HairA" ]]
 [connection signal="button_up" from="TabContainer/Head/VBoxContainer/HBoxContainer6/Left" to="." method="_on_Sprite_Selection_button_up" binds= [ -1, "HairB" ]]
@@ -1192,16 +1164,16 @@ position = Vector2( 584, 36 )
 [connection signal="button_up" from="TabContainer/Head/VBoxContainer/HBoxContainer8/Right" to="." method="_on_Sprite_Selection_button_up" binds= [ 1, "Eyes" ]]
 [connection signal="button_up" from="TabContainer/Head/VBoxContainer/HBoxContainer10/Left" to="." method="_on_Color_Selection_button_up" binds= [ -1, "Eye" ]]
 [connection signal="button_up" from="TabContainer/Head/VBoxContainer/HBoxContainer10/Right" to="." method="_on_Color_Selection_button_up" binds= [ 1, "Eye" ]]
-[connection signal="button_up" from="TabContainer/Top/VBoxContainer/HBoxContainer/Left" to="." method="_on_Color_Selection_button_up" binds= [ -1, "AccessoryC" ]]
-[connection signal="button_up" from="TabContainer/Top/VBoxContainer/HBoxContainer/Right" to="." method="_on_Color_Selection_button_up" binds= [ 1, "AccessoryC" ]]
 [connection signal="button_up" from="TabContainer/Top/VBoxContainer/HBoxContainer2/Left" to="." method="_on_Sprite_Selection_button_up" binds= [ -1, "AccessoryC" ]]
 [connection signal="button_up" from="TabContainer/Top/VBoxContainer/HBoxContainer2/Right" to="." method="_on_Sprite_Selection_button_up" binds= [ 1, "AccessoryC" ]]
+[connection signal="button_up" from="TabContainer/Top/VBoxContainer/HBoxContainer/Left" to="." method="_on_Color_Selection_button_up" binds= [ -1, "AccessoryC" ]]
+[connection signal="button_up" from="TabContainer/Top/VBoxContainer/HBoxContainer/Right" to="." method="_on_Color_Selection_button_up" binds= [ 1, "AccessoryC" ]]
 [connection signal="button_up" from="TabContainer/Top/VBoxContainer/HBoxContainer3/Left" to="." method="_on_Sprite_Selection_button_up" binds= [ -1, "TopA" ]]
 [connection signal="button_up" from="TabContainer/Top/VBoxContainer/HBoxContainer3/Right" to="." method="_on_Sprite_Selection_button_up" binds= [ 1, "TopA" ]]
-[connection signal="button_up" from="TabContainer/Top/VBoxContainer/HBoxContainer4/Left" to="." method="_on_Color_Selection_button_up" binds= [ -1, "Top" ]]
-[connection signal="button_up" from="TabContainer/Top/VBoxContainer/HBoxContainer4/Right" to="." method="_on_Color_Selection_button_up" binds= [ 1, "Top" ]]
 [connection signal="button_up" from="TabContainer/Top/VBoxContainer/HBoxContainer5/Left" to="." method="_on_Sprite_Selection_button_up" binds= [ -1, "TopB" ]]
 [connection signal="button_up" from="TabContainer/Top/VBoxContainer/HBoxContainer5/Right" to="." method="_on_Sprite_Selection_button_up" binds= [ 1, "TopB" ]]
+[connection signal="button_up" from="TabContainer/Top/VBoxContainer/HBoxContainer4/Left" to="." method="_on_Color_Selection_button_up" binds= [ -1, "Top" ]]
+[connection signal="button_up" from="TabContainer/Top/VBoxContainer/HBoxContainer4/Right" to="." method="_on_Color_Selection_button_up" binds= [ 1, "Top" ]]
 [connection signal="button_up" from="TabContainer/Top/VBoxContainer/HBoxContainer6/Left" to="." method="_on_Sprite_Selection_button_up" binds= [ -1, "JacketA" ]]
 [connection signal="button_up" from="TabContainer/Top/VBoxContainer/HBoxContainer6/Right" to="." method="_on_Sprite_Selection_button_up" binds= [ 1, "JacketA" ]]
 [connection signal="button_up" from="TabContainer/Top/VBoxContainer/HBoxContainer7/Left" to="." method="_on_Sprite_Selection_button_up" binds= [ -1, "JacketB" ]]
