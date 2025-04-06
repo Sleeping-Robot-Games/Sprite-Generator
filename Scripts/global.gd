@@ -104,8 +104,6 @@ func load_sprite_from_name(parent_node: Node2D, sprite_name: String):
 
 func load_sprite(sprite_holder: Node2D, state: Dictionary):
 	for part in sprite_holder.get_children():
-		if part.name == "JacketB":
-			continue ## Why..??
 		if part.name in state.sprite_state.keys():
 			var sprite = state.sprite_state[part.name]
 			if sprite:
