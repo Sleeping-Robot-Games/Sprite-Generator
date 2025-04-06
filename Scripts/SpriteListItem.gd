@@ -1,5 +1,8 @@
 extends HBoxContainer
 
+onready var sprite_creator = get_node("/root/Menu/SpriteCreate")
+onready var sprite_list = get_node("/root/Menu/SpriteList")
+
 var sprite_data
 var current_animation = 0
 var animations = ['idle_front', 'idle_right', 'idle_back', 'idle_left']
@@ -15,7 +18,9 @@ func _ready():
 	$SpriteContainer/PlayerSprites/AnimationPlayer.play(animations[current_animation])
 
 func _on_Edit_button_up():
-	pass
+	sprite_list.hide()
+	sprite_creator.show()
+	sprite_creator.load_character_from_save(sprite_data)
 
 func _on_Delete_button_up():
 	emit_signal("signal_test", sprite_data.name)

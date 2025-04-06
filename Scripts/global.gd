@@ -50,9 +50,15 @@ func save_sprite(sprite_state: Dictionary, palette_state: Dictionary, player_nam
 		"sprite_state": sprite_state,
 		"palette_state": palette_state
 	}
-	data_array.append(state)
+	var replaced := false
+	for i in data_array.size():
+		if data_array[i].get("name", "") == player_name:
+			data_array[i] = state
+			replaced = true
+			break
+	if not replaced:
+		data_array.append(state)
 	# Save
-	f = File.new()
 	f.open("user://characters.save", File.WRITE)
 	f.store_string(JSON.print(data_array, "  ", true))
 	f.close()

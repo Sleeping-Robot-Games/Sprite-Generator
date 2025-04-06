@@ -102,6 +102,8 @@ var palette_folder_path = "res://Assets/Palettes"
 
 var current_animation = 0
 
+var editing_saved_character = false
+
 func _ready():
 	$TabContainer/Character/CharacterTabRandom.connect('button_up', self, '_on_Random_Tab_button_up', [[],['Skintone']])
 	$TabContainer/Head/HeadTabRandom.connect('button_up', self, '_on_Random_Tab_button_up', [['HairA', 'HairB', 'HairC', 'HairD', 'Eyes', 'Head','AccessoryA', 'AccessoryB', 'AccessoryC'],['Hair', 'Eye','AccessoryA', 'AccessoryB', 'AccessoryC']])
@@ -109,12 +111,54 @@ func _ready():
 	$TabContainer/Bottom/BottomTabRandom.connect('button_up', self, '_on_Random_Tab_button_up', [['BottomA', 'BottomB', 'Shoes'], ['Bottom', 'Shoe']])
 	create_random_character()
 	$PlayerSprites/AnimationPlayer.play("idle_front")
+
+
+func _on_SpriteCreate_visibility_changed():
+	if visible:
+		if not editing_saved_character:
+			create_random_character()
+			$TabContainer/Character/NameLabel/Name.clear()
+		$TabContainer/Character/NameLabel/Error.hide()
 	
-func _process(delta):
-	pass
 	
-func load_character_from_save():
-	pass
+func load_character_from_save(save_data: Dictionary) -> void:
+	create_random_character() # here be hacks... populating the sprite state dictionary
+	
+	editing_saved_character = true
+
+	if save_data.has("name"):
+		player_name = save_data["name"]
+		$TabContainer/Character/NameLabel/Name.text = player_name
+
+	if save_data.has("sprite_state"):
+		for sprite_name in save_data["sprite_state"].keys():
+			var tex_path = save_data["sprite_state"][sprite_name]
+			if tex_path == "" or not ResourceLoader.exists(tex_path):
+				continue
+			set_sprite_texture(sprite_name, tex_path)
+
+	palette_sprite_state.clear()
+
+	if save_data.has("palette_state"):
+		for palette_type in save_data["palette_state"].keys():
+			var row_idx : int = int(save_data["palette_state"][palette_type])
+
+			var palette_path = "%s/%s/palette.png" % [palette_folder_path, palette_type]
+			if not ResourceLoader.exists(palette_path):
+				continue
+
+			var palette_tex = load(palette_path)
+			var row_count = palette_tex.get_height()
+
+			for spr in palette_sprite_dict[palette_type]:
+				g.set_sprite_color(spr, palette_tex, row_idx, row_count)
+
+			palette_sprite_state[palette_type] = row_idx
+
+	ensure_jacket_state()    
+	ensure_hair("HairB")          
+	update_sheet_preview()        
+
 
 func update_sheet_preview():
 	var state = {'sprite_state': sprite_state, 'palette_state': palette_sprite_state}
@@ -211,7 +255,6 @@ func create_random_character() -> void:
 	update_sheet_preview()
 
 
-
 func ensure_jacket_state():
 	if not '000' in sprite_state['JacketB']:
 		sprite_state['TopB'] = sprite_folder_path + 'TopB/topb_001.png'
@@ -277,9 +320,6 @@ func _on_Save_button_up():
 		$TabContainer.current_tab = 0
 		$TabContainer/Character/NameLabel/Error.text = "Name is Required"
 		$TabContainer/Character/NameLabel/Error.show()
-	elif g.sprite_name_exists(player_name):
-		$TabContainer/Character/NameLabel/Error.text = "Name is Taken"
-		$TabContainer/Character/NameLabel/Error.show()
 	else:
 		g.save_sprite(sprite_state, palette_sprite_state, player_name)
 		hide()
@@ -303,3 +343,5 @@ func _on_Export_button_up():
 	var state = {'sprite_state': sprite_state, 'palette_state': palette_sprite_state}
 	sprite_generator.create_spritesheet(state)
 	sprite_generator.export_spritesheet()
+
+

@@ -7,6 +7,7 @@ func _ready():
 
 func _on_Create_button_up():
 	hide()
+	get_parent().get_node("SpriteCreate").editing_saved_character = false
 	get_parent().get_node("SpriteCreate").show()
 
 

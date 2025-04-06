@@ -126,6 +126,7 @@ custom_fonts/font = ExtResource( 31 )
 tab_align = 0
 
 [node name="Character" type="Tabs" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 27.0
@@ -877,7 +878,6 @@ texture_disabled = ExtResource( 12 )
 texture_focused = ExtResource( 11 )
 
 [node name="Bottom" type="Tabs" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 27.0
@@ -1139,12 +1139,13 @@ theme = ExtResource( 30 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 31 )
-text = "Back"
+text = "Home"
 
 [node name="Preview" type="Node2D" parent="."]
 visible = false
 position = Vector2( 584, 36 )
 
+[connection signal="visibility_changed" from="." to="." method="_on_SpriteCreate_visibility_changed"]
 [connection signal="text_changed" from="TabContainer/Character/NameLabel/Name" to="." method="_on_Name_text_changed"]
 [connection signal="button_up" from="TabContainer/Character/SkinToneLabel/Left" to="." method="_on_Color_Selection_button_up" binds= [ -1, "Skintone" ]]
 [connection signal="button_up" from="TabContainer/Character/SkinToneLabel/Right" to="." method="_on_Color_Selection_button_up" binds= [ 1, "Skintone" ]]
